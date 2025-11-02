@@ -1,0 +1,103 @@
+================================================================================
+ALL OUTPUT FILE LOCATIONS - EAF-089-2025 DOCLING EXTRACTION
+================================================================================
+
+BASE DIRECTORY:
+/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/
+
+================================================================================
+CHAPTER 1 - Descripción de la perturbación (11 pages, 49 elements)
+================================================================================
+JSON: capitulo_01/outputs/layout_WITH_PATCH.json (18.5 KB)
+PDF:  capitulo_01/outputs/capitulo_01_annotated.pdf (0.20 MB)
+
+================================================================================
+CHAPTER 2 - Equipamiento afectado (79 pages, 101 elements)
+================================================================================
+JSON: capitulo_02/outputs/layout_WITH_PATCH.json (24.8 KB)
+PDF:  capitulo_02/outputs/capitulo_02_annotated.pdf (1.76 MB)
+
+================================================================================
+CHAPTER 3 - Energía no suministrada (63 pages, 88 elements)
+================================================================================
+JSON: capitulo_03/outputs/layout_WITH_PATCH.json (19.7 KB)
+PDF:  capitulo_03/outputs/capitulo_03_annotated.pdf (5.08 MB)
+
+================================================================================
+CHAPTER 4 - Configuraciones previo y posterior (7 pages, 52 elements)
+================================================================================
+JSON: capitulo_04/outputs/layout_WITH_PATCH.json (22.3 KB)
+PDF:  capitulo_04/outputs/capitulo_04_annotated.pdf (0.63 MB)
+
+================================================================================
+CHAPTER 5 - Cronología de eventos (12 pages, 14 elements)
+================================================================================
+JSON: capitulo_05/outputs/layout_WITH_PATCH.json (3.8 KB)
+PDF:  capitulo_05/outputs/capitulo_05_annotated.pdf (0.21 MB)
+
+================================================================================
+CHAPTER 6 - Normalización del servicio (94 pages, 451 elements)
+================================================================================
+JSON: capitulo_06/outputs/layout_WITH_PATCH.json (201.2 KB)
+PDF:  capitulo_06/outputs/capitulo_06_annotated.pdf (1.27 MB)
+
+================================================================================
+CHAPTER 7 - Análisis de las causas de la falla (82 pages, 366 elements)
+================================================================================
+JSON: capitulo_07/outputs/layout_WITH_PATCH.json (141.1 KB)
+PDF:  capitulo_07/outputs/capitulo_07_annotated.pdf (2.99 MB)
+
+================================================================================
+CHAPTER 8 - Detalle de información (1 page, 10 elements)
+================================================================================
+JSON: capitulo_08/outputs/layout_WITH_PATCH.json (3.2 KB)
+PDF:  capitulo_08/outputs/capitulo_08_annotated.pdf (0.15 MB)
+
+================================================================================
+CHAPTER 9 - Análisis de protecciones (33 pages, 684 elements)
+================================================================================
+JSON: capitulo_09/outputs/layout_WITH_PATCH.json (229.5 KB)
+PDF:  capitulo_09/outputs/capitulo_09_annotated.pdf (0.47 MB)
+
+================================================================================
+CHAPTER 10 - Pronunciamiento técnico (11 pages, 147 elements)
+================================================================================
+JSON: capitulo_10/outputs/layout_WITH_PATCH.json (67.5 KB)
+PDF:  capitulo_10/outputs/capitulo_10_annotated.pdf (0.16 MB)
+
+================================================================================
+CHAPTER 11 - Recomendaciones (7 pages, 120 elements)
+================================================================================
+JSON: capitulo_11/outputs/layout_WITH_PATCH.json (40.3 KB)
+PDF:  capitulo_11/outputs/capitulo_11_annotated.pdf (0.11 MB)
+
+================================================================================
+SUMMARY
+================================================================================
+Total chapters: 11
+Total pages: 400
+Total elements: 2,082
+Total JSON files: 11 (771.3 KB total)
+Total PDF files: 11 (13.13 MB total)
+
+================================================================================
+QUICK ACCESS COMMANDS
+================================================================================
+
+# Navigate to outputs:
+cd "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout"
+
+# List all JSON files:
+ls -lh capitulo_*/outputs/*.json
+
+# List all PDF files:
+ls -lh capitulo_*/outputs/*.pdf
+
+# View a JSON:
+cat capitulo_01/outputs/layout_WITH_PATCH.json | jq .
+
+# Open a PDF:
+xdg-open capitulo_01/outputs/capitulo_01_annotated.pdf
+
+# Count total elements across all chapters:
+cat capitulo_*/outputs/layout_WITH_PATCH.json | jq '.elements | length' | awk '{s+=$1} END {print s}'

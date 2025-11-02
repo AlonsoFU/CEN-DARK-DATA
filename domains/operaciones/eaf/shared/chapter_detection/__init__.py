@@ -1,0 +1,1 @@
+# EAF Chapter Detection Module

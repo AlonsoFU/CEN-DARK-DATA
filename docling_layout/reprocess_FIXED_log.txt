@@ -1,0 +1,793 @@
+2025-10-29 20:24:04,657 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:04,667 - INFO - Going to convert document batch...
+2025-10-29 20:24:04,667 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:04,675 - INFO - Loading plugin 'docling_defaults'
+2025-10-29 20:24:04,675 - INFO - Registered picture descriptions: ['vlm', 'api']
+2025-10-29 20:24:04,687 - INFO - Loading plugin 'docling_defaults'
+2025-10-29 20:24:04,689 - INFO - Registered ocr engines: ['easyocr', 'ocrmac', 'rapidocr', 'tesserocr', 'tesseract']
+2025-10-29 20:24:05,661 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:08,896 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:10,894 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:11,611 - INFO - Processing document EAF-089-2025_capitulo_01_pages_1-11.pdf
+2025-10-29 20:24:14,761 - WARNING - Encountered an error during conversion of document 642afcc370239d9dad6691092a430dbb844f6c6c4bfcd941564e42c5a0e93a37:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:24:14,784 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:14,793 - INFO - Going to convert document batch...
+2025-10-29 20:24:14,793 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:14,793 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:17,759 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:19,346 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:20,039 - INFO - Processing document EAF-089-2025_capitulo_02_pages_12-90.pdf
+2025-10-29 20:24:22,177 - WARNING - Encountered an error during conversion of document 4f7d8cb87349af04b25447d40298f366b44f3d0ca5a67ee8882e1a08b09978f3:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:24:22,197 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:22,211 - INFO - Going to convert document batch...
+2025-10-29 20:24:22,211 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:22,211 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:25,053 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:26,715 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:27,471 - INFO - Processing document EAF-089-2025_capitulo_03_pages_91-152.pdf
+2025-10-29 20:24:30,148 - WARNING - Encountered an error during conversion of document 1a8ffc4cc4ea78ce1da6595b9cdd7b28aa061807bd09733bea09729aa1affa7b:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:24:30,178 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:30,180 - INFO - Going to convert document batch...
+2025-10-29 20:24:30,180 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:30,180 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:32,893 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:34,623 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:35,345 - INFO - Processing document EAF-089-2025_capitulo_04_pages_153-159.pdf
+2025-10-29 20:24:40,459 - WARNING - Encountered an error during conversion of document b8e51a864824c8b24fb788f37f1e4820b90e264574901a23b7d231fdf691e908:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+================================================================================
+🔄 COMPLETE REPROCESSING: ALL 11 CHAPTERS WITH DOCLING + EAF PATCH
+================================================================================
+
+This script will:
+  1. Extract all 11 chapters using Docling + EAF monkey patch
+  2. Generate layout_WITH_PATCH.json with all elements and bounding boxes
+  3. Create annotated PDFs with colored bounding boxes
+
+⚙️  Configuration:
+  - Memory-optimized for 4GB GPU (GTX 1650)
+  - Lightweight mode: OCR disabled, FAST table detection
+  - Expected VRAM usage: ~2.0 GB (safe for 3.9 GB available)
+
+📊 Processing plan:
+  Chapter  1 (pages     1-11): ~2 min
+  Chapter  2 (pages    12-90): ~8 min
+  Chapter  3 (pages   91-152): ~7 min
+  Chapter  4 (pages  153-159): ~2 min
+  Chapter  5 (pages  160-171): ~3 min
+  Chapter  6 (pages  172-265): ~10 min
+  Chapter  7 (pages  266-347): ~9 min
+  Chapter  8 (pages  348-348): ~1 min
+  Chapter  9 (pages  349-381): ~4 min
+  Chapter 10 (pages  382-392): ~3 min
+  Chapter 11 (pages  393-399): ~2 min
+
+⏱️  Total estimated time: ~51 minutes (0.8 hours)
+
+⚠️  IMPORTANT:
+  - Do NOT run other GPU processes during batch extraction
+  - Monitor GPU usage: watch -n 1 nvidia-smi
+  - Safe to cancel anytime (Ctrl+C)
+
+🚀 Starting batch processing in 3 seconds...
+
+
+================================================================================
+📦 EXTRACTING CHAPTER 1
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_01_pages_1-11.pdf
+📄 Pages: 1-11
+⏱️  Estimated time: ~2 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_01/EAF-089-2025_capitulo_01_pages_1-11.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:04...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 52 text lines from PDF
+📊 [PATCH] Docling has 129 boxes (14 clusters + 115 cells)
+   🔍 DEBUG: Line '11066.23...' has 71.1% coverage
+   🔍 DEBUG: Line '11066.23...' has 71.1% coverage
+   🔍 DEBUG: Line '76.257.379-2...' has 72.6% coverage
+   🔍 DEBUG: Line '76.257.379-2...' has 72.6% coverage
+📦 [PATCH] Total blocks to analyze: 115 (115 Docling + 0 missing)
+📝 [PATCH] Found 4 missing titles (before merging)
+   ✅ '1. Descripción pormenorizada de la perturbación' (nivel 2)
+   ✅ 'a.' (nivel 2)
+   ✅ 'b. Identificación instalación afectada' (nivel 2)
+   ✅ 'c. Identificación del elemento fallado' (nivel 2)
+📝 [PATCH] After merging: 4 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 2
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_02_pages_12-90.pdf
+📄 Pages: 12-90
+⏱️  Estimated time: ~8 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_02/EAF-089-2025_capitulo_02_pages_12-90.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:14...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 154 text lines from PDF
+📊 [PATCH] Docling has 316 boxes (6 clusters + 310 cells)
+   🔍 DEBUG: Line '36.7...' has 65.9% coverage
+🔍 [PATCH] Found 27 text lines that Docling has NO boxes for:
+   - '2...' at (274.2, 188.9)
+   - '5...' at (274.2, 208.1)
+   - '9...' at (384.1, 208.1)
+   - '1...' at (274.2, 246.6)
+   - '1...' at (274.2, 285.1)
+   ... and 22 more
+📦 [PATCH] Total blocks to analyze: 337 (310 Docling + 27 missing)
+📝 [PATCH] Found 2 missing titles (before merging)
+   ✅ '2. Descripción del equipamiento afectado a causa de la falla' (nivel 2)
+   ✅ 'a. Sistema de Generación' (nivel 2)
+📝 [PATCH] After merging: 2 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 3
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_03_pages_91-152.pdf
+📄 Pages: 91-152
+⏱️  Estimated time: ~7 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_03/EAF-089-2025_capitulo_03_pages_91-152.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:22...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 261 text lines from PDF
+📊 [PATCH] Docling has 538 boxes (23 clusters + 515 cells)
+   🔍 DEBUG: Line '11066.23 MW...' has 80.4% coverage
+🔍 [PATCH] Found 6 text lines that Docling has NO boxes for:
+   - '1...' at (419.5, 100.1)
+   - '1...' at (419.5, 125.4)
+   - '1...' at (419.5, 146.4)
+   - '1...' at (419.5, 163.1)
+   - '1...' at (419.5, 179.9)
+   ... and 1 more
+📦 [PATCH] Total blocks to analyze: 521 (515 Docling + 6 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '3. Estimación de la energía no suministrada afectada a causa de la falla' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 4
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_04_pages_153-159.pdf
+📄 Pages: 153-159
+⏱️  Estimated time: ~2 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_04/EAF-089-2025_capitulo_04_pages_153-159.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:30...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 25 text lines from PDF
+📊 [PATCH] Docling has 109 boxes (20 clusters + 89 cells)
+📦 [PATCH] Total blocks to analyze: 89 (89 Docling + 0 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '4. Descripción de las configuraciones en los momentos previo y posterior a la falla' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 5
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_05_pages_160-171.pdf
+📄 Pages: 160-171
+⏱️  Estimated time: ~3 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+2025-10-29 20:24:40,473 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:40,475 - INFO - Going to convert document batch...
+2025-10-29 20:24:40,475 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:40,475 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:43,304 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:46,029 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:46,729 - INFO - Processing document EAF-089-2025_capitulo_05_pages_160-171.pdf
+2025-10-29 20:24:49,133 - WARNING - Encountered an error during conversion of document 085dda1c7428bbf28ee0dc567153de267134c4fac1c1d878d8e99c857132fcc9:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:24:49,160 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:49,164 - INFO - Going to convert document batch...
+2025-10-29 20:24:49,164 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:49,164 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:51,985 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:53,984 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:24:54,903 - INFO - Processing document EAF-089-2025_capitulo_06_pages_172-265.pdf
+2025-10-29 20:24:57,025 - WARNING - Encountered an error during conversion of document 5dbed20613ba74537e7acaf56c2c1dfd139b18b54c4e5ba7c33842972e4386bd:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:24:57,051 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:24:57,061 - INFO - Going to convert document batch...
+2025-10-29 20:24:57,062 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:24:57,062 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:00,108 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:02,144 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:02,876 - INFO - Processing document EAF-089-2025_capitulo_07_pages_266-347.pdf
+2025-10-29 20:25:07,209 - WARNING - Encountered an error during conversion of document 3dd10a88dd06cbc7a5e3652b97aa9793061c47bb9fdf982c5e88f804598de35e:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:25:07,227 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:25:07,228 - INFO - Going to convert document batch...
+2025-10-29 20:25:07,229 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:25:07,229 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:10,171 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:12,160 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:12,856 - INFO - Processing document EAF-089-2025_capitulo_08_pages_348-348.pdf
+2025-10-29 20:25:13,524 - WARNING - Encountered an error during conversion of document 3859003d2a4d558dc844c355b1187c1cd931862376e81598cdf37604925e28c0:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:25:13,542 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:25:13,544 - INFO - Going to convert document batch...
+2025-10-29 20:25:13,544 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:25:13,544 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:16,431 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:18,449 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:19,133 - INFO - Processing document EAF-089-2025_capitulo_09_pages_349-381.pdf
+2025-10-29 20:25:21,080 - WARNING - Encountered an error during conversion of document b0348650c24dea13611e3556c504ee55c11ae6789117eeb551f644a6eb306769:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+2025-10-29 20:25:21,099 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:25:21,101 - INFO - Going to convert document batch...
+2025-10-29 20:25:21,101 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:25:21,101 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:23,937 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:26,061 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:26,736 - INFO - Processing document EAF-089-2025_capitulo_10_pages_382-392.pdf
+2025-10-29 20:25:28,859 - WARNING - Encountered an error during conversion of document b5ae7efbd02d7620d967a603b7f4a10ad66b9a3defd7adb2f87a48631a61840c:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_05/EAF-089-2025_capitulo_05_pages_160-171.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:40...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 90 text lines from PDF
+📊 [PATCH] Docling has 155 boxes (5 clusters + 150 cells)
+🔍 [PATCH] Found 1 text lines that Docling has NO boxes for:
+   - 'Apertura automática de los interruptores 52J1 y 52J2 de S/E ...' at (215.7, 471.3)
+📦 [PATCH] Total blocks to analyze: 151 (150 Docling + 1 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '5. Cronología de eventos y la descripción de las causas de los eventos' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 6
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_06_pages_172-265.pdf
+📄 Pages: 172-265
+⏱️  Estimated time: ~10 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_06/EAF-089-2025_capitulo_06_pages_172-265.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:49...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 44 text lines from PDF
+📊 [PATCH] Docling has 97 boxes (18 clusters + 79 cells)
+   🔍 DEBUG: Line '6. Normalización del servicio...' has 94.0% coverage
+📦 [PATCH] Total blocks to analyze: 79 (79 Docling + 0 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '6. Normalización del servicio' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 7
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_07_pages_266-347.pdf
+📄 Pages: 266-347
+⏱️  Estimated time: ~9 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_07/EAF-089-2025_capitulo_07_pages_266-347.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:24:57...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 51 text lines from PDF
+📊 [PATCH] Docling has 90 boxes (11 clusters + 79 cells)
+📦 [PATCH] Total blocks to analyze: 79 (79 Docling + 0 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '7. Análisis de las causas de la falla y de la actuación de los dispositivos de protección y control' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 8
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_08_pages_348-348.pdf
+📄 Pages: 348-348
+⏱️  Estimated time: ~1 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_08/EAF-089-2025_capitulo_08_pages_348-348.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:25:07...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 130 text lines from PDF
+📊 [PATCH] Docling has 175 boxes (10 clusters + 165 cells)
+📦 [PATCH] Total blocks to analyze: 165 (165 Docling + 0 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '8. Detalle de toda la información utilizada en la evaluación de la falla' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 9
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_09_pages_349-381.pdf
+📄 Pages: 349-381
+⏱️  Estimated time: ~4 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_09/EAF-089-2025_capitulo_09_pages_349-381.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:25:13...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 85 text lines from PDF
+📊 [PATCH] Docling has 178 boxes (6 clusters + 172 cells)
+📦 [PATCH] Total blocks to analyze: 172 (172 Docling + 0 missing)
+📝 [PATCH] Found 2 missing titles (before merging)
+   ✅ '9. Análisis de las actuaciones de protecciones' (nivel 2)
+   ✅ '9.1 Incumplimiento Normativo' (nivel 2)
+📝 [PATCH] After merging: 2 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 10
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_10_pages_382-392.pdf
+📄 Pages: 382-392
+⏱️  Estimated time: ~3 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_10/EAF-089-2025_capitulo_10_pages_382-392.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:25:21...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 42 text lines from PDF
+📊 [PATCH] Docling has 85 boxes (15 clusters + 70 cells)
+📦 [PATCH] Total blocks to analyze: 70 (70 Docling + 0 missing)
+📝 [PATCH] Found 4 missing titles (before merging)
+   ✅ '10. Pronunciamiento Técnico del Coordinador Eléctrico Nacional' (nivel 2)
+   ✅ 'a. Incorrecto desempeño de los esquemas de protecciones de la línea 2x500 kV Nueva' (nivel 2)
+   ✅ 'b. Intervención de los esquemas de protecciones, control y comunicaciones sin solicitud' (nivel 2)
+   ✅ '9.1 del presente informe, varios coordinados tuvieron indisponibilidad de comunicación Hot' (nivel 2)
+📝 [PATCH] After merging: 4 complete titles
+2025-10-29 20:25:28,883 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-10-29 20:25:28,884 - INFO - Going to convert document batch...
+2025-10-29 20:25:28,884 - INFO - Initializing pipeline for StandardPdfPipeline with options hash e647edf348883bed75367b22fbe60347
+2025-10-29 20:25:28,885 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:31,843 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:34,095 - INFO - Accelerator device: 'cuda:0'
+2025-10-29 20:25:34,799 - INFO - Processing document EAF-089-2025_capitulo_11_pages_393-399.pdf
+2025-10-29 20:25:36,819 - WARNING - Encountered an error during conversion of document 2df1177743108e49ebc2663c1e77905b3fc9446b4fccde346dd9b6c3c0696b1f:
+Traceback (most recent call last):
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 230, in _build_document
+    for p in pipeline_pages:  # Must exhaust!
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/pipeline/base_pipeline.py", line 195, in _apply_on_pages
+    yield from page_batch
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/page_assemble_model.py", line 70, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/table_structure_model.py", line 177, in __call__
+    for page in page_batch:
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/models/layout_model.py", line 211, in __call__
+    ).postprocess()
+      ^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/venv/lib/python3.12/site-packages/docling/utils/layout_postprocessor.py", line 224, in postprocess
+    self.regular_clusters = self._process_regular_clusters()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/eaf_patch/core/eaf_patch_engine.py", line 421, in _patched_process_regular_clusters
+    for block in missing_line_blocks:
+                 ^^^^^^^^^^^^^^^^^^^
+
+NameError: name 'missing_line_blocks' is not defined
+
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📦 EXTRACTING CHAPTER 11
+================================================================================
+📄 PDF: EAF-089-2025_capitulo_11_pages_393-399.pdf
+📄 Pages: 393-399
+⏱️  Estimated time: ~2 minutes
+
+🔧 Applying EAF monkey patch...
+
+🔧 Applying universal patch with PDF extraction...
+📄 [PATCH] PDF path set: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/claude_ocr/capitulo_11/EAF-089-2025_capitulo_11_pages_393-399.pdf
+✅ Universal patch applied successfully
+
+⚙️  Configuring Docling (lightweight mode)...
+🔄 Starting extraction at 20:25:28...
+
+================================================================================
+🐵 [PATCH] Universal Fix with Direct PDF Extraction
+================================================================================
+📄 [PATCH] Extracted 50 text lines from PDF
+📊 [PATCH] Docling has 107 boxes (20 clusters + 87 cells)
+📦 [PATCH] Total blocks to analyze: 87 (87 Docling + 0 missing)
+📝 [PATCH] Found 1 missing titles (before merging)
+   ✅ '11. Recomendación respecto de las instalaciones a las cuales el Coordinador Eléctrico Nacional' (nivel 2)
+📝 [PATCH] After merging: 1 complete titles
+❌ Extraction failed: name 'missing_line_blocks' is not defined
+
+================================================================================
+📊 BATCH PROCESSING COMPLETE
+================================================================================
+
+📋 Results:
+❌ Chapter  1: Extraction failed
+❌ Chapter  2: Extraction failed
+❌ Chapter  3: Extraction failed
+❌ Chapter  4: Extraction failed
+❌ Chapter  5: Extraction failed
+❌ Chapter  6: Extraction failed
+❌ Chapter  7: Extraction failed
+❌ Chapter  8: Extraction failed
+❌ Chapter  9: Extraction failed
+❌ Chapter 10: Extraction failed
+❌ Chapter 11: Extraction failed
+
+================================================================================
+⏱️  Total time: 1.6 minutes (0.0 hours)
+✅ Successful: 0/11 chapters - []
+❌ Failed: 11/11 chapters - [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+📁 Output locations:
+  JSON files: shared_platform/utils/outputs/docling_layout/capitulo_{N:02d}/outputs/layout_WITH_PATCH.json
+  Annotated PDFs: shared_platform/utils/outputs/docling_layout/capitulo_{N:02d}/outputs/capitulo_{N:02d}_annotated_WITH_PATCH.pdf
+
+📄 Summary saved: /home/alonso/Documentos/Github/Proyecto Dark Data CEN/shared_platform/utils/outputs/docling_layout/COMPLETE_REPROCESS_SUMMARY.json
+================================================================================

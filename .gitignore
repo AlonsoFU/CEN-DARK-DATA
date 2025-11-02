@@ -1,0 +1,287 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Heavy files and sensitive data
+*.pdf
+*.db
+*.sqlite
+*.sqlite3
+venv/
+env/
+.venv/
+
+# Large output directories
+outputs/raw_extractions/
+outputs/validated_extractions/
+outputs/universal_json/
+*/raw_extractions/
+*/validated_extractions/
+*/universal_json/
+
+# Backup files
+backup_*/
+*_backup/
+*.backup
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Project specific - Dark Data Platform
+# Heavy data files and databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Large document files (PDFs, images, videos)
+*.pdf
+*.PDF
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+
+# Archive and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+
+# ENTRADA DE DATOS (INPUT) - Archivos fuente pesados
+# Documentos PDF originales (pueden ser muy grandes)
+domains/*/data/source_documents/
+domains/*/anexos_eaf/data/source_documents/
+platform_data/raw_documents/
+data/raw/
+data/input/
+raw_data/
+
+# SALIDA DE DATOS (OUTPUT) - Resultados de extracción
+# Extracciones JSON procesadas (pueden ser muy voluminosas)
+domains/*/anexos_eaf/chapters/*/data/extractions/
+domains/*/extractions/
+extractions/
+extracted_data/
+output/
+processed/
+
+# Base de datos generadas (pesadas)
+platform_data/database/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Cache y archivos temporales
+**/cache/
+**/temp/
+**/tmp/
+**/.cache/
+logs/
+.claude/
+archive/
+.archive*/
+processed_docs/
+scraped/
+
+# Archivos JSON grandes de extracción
+*.json
+# PERO mantener archivos de configuración pequeños
+!**/configs/**/*.json
+!**/schemas/**/*.json
+!**/patterns/**/*.json
+!**/profiles/**/*.json
+!**/resources/**/*.json
+!ai_platform/resources/*.json
+!pyproject.toml
+!package*.json
+!tsconfig*.json
+!.vscode/*.json
+
+# MANTENER: Archivos de muestra pequeños y documentación
+!**/samples_and_tests/**
+!**/documentation/**/*.json
+!**/README.md
+!**/WORKFLOW.md
+
+# HTML y archivos web (excepto templates)
+*.html
+*.htm
+!**/templates/**/*.html
+!shared_platform/web/templates/**/*.html
+
+# Directorios de salida específicos del proyecto
+# Mantener estructura pero no contenido
+!**/extractions/.gitkeep
+!**/scraped/.gitkeep
+!**/data/.gitkeep
+!**/README.md
+
+# MCP and AI model cache
+**/.mcp_cache/
+**/model_cache/
+**/.anthropic_cache/
+
+# Development artifacts
+demo_extraction.py
+simple_page_extractor.py
+*_prueba.py
+test_*.html
+response_*.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API Keys and Environment Files (CRITICAL - NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+api_keys.txt
+anthropic_key.txt
+*api_key*
+*.key
+.envrc
+
+# Local configuration
+config/local_*.yml
+config/local_*.json

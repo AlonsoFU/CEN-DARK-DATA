@@ -1,0 +1,209 @@
+{
+  "configuracion_esquema_universal": {
+    "version": "1.0",
+    "pais": "Chile",
+    "sistema_electrico": "SEN",
+    "regulador_principal": "Coordinador Eléctrico Nacional",
+    "idioma": "es",
+    "contexto_jsonld": "https://coordinador.cl/context/v1"
+  },
+
+  "estructura_json_obligatoria": {
+    "campos_requeridos": [
+      "@context",
+      "@id",
+      "@type",
+      "metadatos_universales",
+      "entidades",
+      "referencias_cruzadas",
+      "etiquetas_semanticas",
+      "datos_especificos_dominio",
+      "metadatos_calidad"
+    ],
+
+    "formato_id": "cen:{dominio}:{tipo_documento}:{fecha}",
+
+    "dominios_validos": [
+      "operaciones",
+      "mercados",
+      "legal",
+      "planificacion"
+    ]
+  },
+
+  "tipos_entidades_chile": {
+    "centrales_electricas": {
+      "tipos_validos": [
+        "CentralSolarChile",
+        "CentralEolicaChile",
+        "CentralHidroelectricaChile",
+        "CentralTermicaChile",
+        "CentralBiomasaChile",
+        "CentralGeotermicaChile",
+        "CentralElectricaChile"
+      ],
+      "formato_id": "cen:central:{nombre_normalizado}",
+      "campos_requeridos": ["@id", "@type", "nombre", "confianza"]
+    },
+
+    "empresas": {
+      "tipos_validos": ["EmpresaElectricaChile"],
+      "formato_id": "cen:empresa:{nombre_normalizado}",
+      "campos_requeridos": ["@id", "@type", "nombre", "confianza"]
+    },
+
+    "ubicaciones": {
+      "tipos_validos": ["RegionChile", "ProvinciaChile", "ComunaChile"],
+      "formato_id": "cen:ubicacion:{nombre_normalizado}",
+      "campos_requeridos": ["@id", "@type", "nombre", "confianza"]
+    }
+  },
+
+  "empresas_principales_chile": [
+    "Enel Chile",
+    "Enel Green Power Chile",
+    "Colbún S.A.",
+    "AES Gener",
+    "ENGIE",
+    "Statkraft",
+    "Acciona Energía",
+    "Atlas Renewable Energy",
+    "Sonnedix",
+    "Solarpack"
+  ],
+
+  "regiones_chile": [
+    "Arica y Parinacota",
+    "Tarapacá",
+    "Antofagasta",
+    "Atacama",
+    "Coquimbo",
+    "Valparaíso",
+    "Metropolitana",
+    "O'Higgins",
+    "Maule",
+    "Ñuble",
+    "Biobío",
+    "Araucanía",
+    "Los Ríos",
+    "Los Lagos",
+    "Aysén",
+    "Magallanes y Antártica Chilena"
+  ],
+
+  "tipos_documentos": {
+    "operaciones": [
+      "anexo_01_generacion_programada",
+      "anexo_02_generacion_real",
+      "anexo_03_cdc_reports",
+      "anexo_04_mantenimiento",
+      "informe_diario_operacional",
+      "reporte_incidentes"
+    ],
+    "mercados": [
+      "precios_spot_diarios",
+      "costos_marginales",
+      "licitaciones_suministro",
+      "demanda_sistema"
+    ],
+    "legal": [
+      "regulaciones_cne",
+      "normativas_sec",
+      "resoluciones_coordinador",
+      "ley_servicios_electricos"
+    ],
+    "planificacion": [
+      "estudios_expansion_transmision",
+      "planificacion_sen",
+      "proyecciones_demanda",
+      "evaluacion_proyectos"
+    ]
+  },
+
+  "relaciones_cruzadas_automaticas": {
+    "operaciones_a_mercados": [
+      {
+        "condicion": "generacion_solar_mencionada",
+        "relacion": "IMPACTA_PRECIO_MEDIODIA",
+        "confianza_base": 0.85
+      },
+      {
+        "condicion": "incidente_sistema",
+        "relacion": "CAUSA_ALTERACION_MERCADO",
+        "confianza_base": 0.9
+      }
+    ],
+    "operaciones_a_legal": [
+      {
+        "condicion": "centrales_ernc",
+        "relacion": "DEBE_CUMPLIR_NORMATIVA_ERNC",
+        "confianza_base": 0.9
+      },
+      {
+        "condicion": "incidente_seguridad",
+        "relacion": "ACTIVA_PROTOCOLO_SEGURIDAD",
+        "confianza_base": 0.95
+      }
+    ],
+    "mercados_a_planificacion": [
+      {
+        "condicion": "alta_demanda_sostenida",
+        "relacion": "GATILLA_ESTUDIOS_EXPANSION",
+        "confianza_base": 0.8
+      }
+    ]
+  },
+
+  "etiquetas_semanticas_obligatorias": [
+    "chile",
+    "sistema_electrico_nacional",
+    "sen"
+  ],
+
+  "etiquetas_por_dominio": {
+    "operaciones": [
+      "operaciones_sen",
+      "coordinador_electrico",
+      "despacho_economico",
+      "generacion_real",
+      "generacion_programada"
+    ],
+    "mercados": [
+      "mercado_spot",
+      "precios_energia",
+      "costo_marginal",
+      "licitaciones"
+    ],
+    "legal": [
+      "regulacion_electrica",
+      "cne",
+      "sec",
+      "cumplimiento_normativo"
+    ],
+    "planificacion": [
+      "expansion_transmision",
+      "planificacion_sen",
+      "estudios_coordinador"
+    ]
+  },
+
+  "validaciones_calidad": {
+    "confianza_minima_entidades": 0.7,
+    "confianza_minima_referencias": 0.8,
+    "campos_metadatos_requeridos": [
+      "confianza_extraccion",
+      "estado_validacion",
+      "sistema_electrico",
+      "metodo_procesamiento"
+    ]
+  },
+
+  "instrucciones_ia": {
+    "usar_siempre_estructura_obligatoria": true,
+    "preservar_datos_originales_en": "datos_especificos_dominio",
+    "extraer_entidades_automaticamente": true,
+    "generar_referencias_cruzadas": true,
+    "usar_contexto_chileno": true,
+    "idioma_respuesta": "español"
+  }
+}

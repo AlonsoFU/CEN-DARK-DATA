@@ -1,0 +1,638 @@
+=== PÁGINA 1 ===
+  Página 1 de 399   
+ Estudio para análisis de falla EAF 089/202 5 
+“Desconexión forzada de  la línea 2x500 kV Nueva Maitencillo  - Nueva Pan de Azúcar”  
+Fecha de Emisión: 18-03-2025 
+ 
+ 
+1. Descripción pormenorizada de la perturbación  
+ 
+a. Fecha y Hora de la falla  
+Fecha  25/02/2025  
+Hora 15:16  
+Consumos desconectados (MW)  11066.23 
+Demanda previa del sistema (MW)  11066.23 
+Porcentaje de desconexión  100% 
+Calificación Apagón  Apagón Total  
+ 
+b. Identificación instalación afectada  
+Nombre de la instalación  Ambos circuitos de la línea 2x500 kV Nueva Maitencillo  - Nueva Pan de Azúcar  
+/ LT002CI1TR01T0022ST01T0022  y LT002CI2TR01T0022ST01T0022  
+Tipo de instalación  Línea 
+Tensión nominal  500 kV  
+Segmento  Transmisión Nacional  
+Propietario instalación afectada  Interchile S.A.  
+RUT 76.257.379 -2 
+Representante Legal  Luis Llano  
+Dirección  Cerro El Plomo 5630 , Oficina  1802, Las Condes, Región Metropolitana de 
+Santiago  
+ 
+c. Identificación del elemento fallado  
+Nombre del elemento afectado  Sistema  de protecci ón N°1 de cada circuito  de la línea de transmisión 2x500 
+kV Nueva  Maitencillo - Nueva  Pan de Azúcar / SP0037T0022SE002T0022 y 
+SP0026T0022SE002T0022.  
+Propietario elemento fallado  Interchile S.A.  
+RUT 76.257.379 -2 
+Representante Legal  Luis Llano  
+Dirección  Cerro El Plomo 5630 , Oficina  1802, Las Condes, Región Metropolitana de 
+Santiago  
+ 
+ 
+
+=== PÁGINA 2 ===
+  Página 2 de 399   
+ d.1 Origen y causa de la falla  
+A las 15:15:41 horas  del día 25 de febrero de 2025 ocurre  la apertura intempestiva de los interruptores 
+52K8, 52K9, 52K11 y 52K12 de S/E Nueva Pan de Azúcar, correspondientes a los extremos Nueva Pan 
+de Azúcar de ambos circuitos de la línea de transmisión 2x500 kV Nueva Maitencillo - Nueva Pan de 
+Azúcar.  
+De manera simultánea,  se produjo la apertura de los interruptores 52K10 y 52K11 de S/E Nueva 
+Maitencillo, correspondientes al circuito N°1 de la mencionada línea. Lo anterior , sin presentarse 
+condiciones de falla a nivel de equipamiento  primario en el Sistema Eléctrico Nacional  (SEN) , así como 
+tampoco  en las líneas de transmisión protegidas por los interruptores operados. Si bien 1.3 segundos 
+más tarde se produjo la reconexión automática del extremo Nueva Pan de Azúcar del circuito  N°1 antes 
+mencionado , al estar previamente abierto el extremo Nueva Maitencillo , no resultó en una revinculación 
+del Sistema  Eléctrico Nacional a nivel de 500 kV.  
+Producto de la apertura intempestiva de ambos circuitos de la línea 2x500 kV Nueva Maitencillo - Nueva 
+Pan de Azúcar, por donde transitaban del orden de 1800 MW, se produjeron durante aproximadamente 
+1 segundo oscilaciones de potencia en el sistema de 220 kV paralelo entre las SS/EE Nueva Maitencillo 
+y Nueva Pan de Azúcar, las cuales dada su gran amplitud resultaron en la apertura de los circuitos de 
+dicho sistema ya sea por detección de dichas oscilaciones a través de sus protecciones de impedancia 
+o por o peración de sus esquemas de aceleración por teleprotección. Lo anterior redundó en la 
+conformación de dos islas eléctricas en el sistema: una excedentaria al norte de las SS/EE Nueva Pan 
+de Azúcar, Pan de Azúcar y Las Compañías, y otra deficitaria al sur d e dichas SS/EE.  
+Posteriormente, e n la isla norte se produjo la desconexión de unidades generadoras a través de 
+automatismos logrando cierta estabilidad, no obstante, ésta colapsó unos 4 minutos desde la 
+separación del Sistema E léctrico Nacional  producto de elevadas tensiones que provocaron la 
+desconexión sucesiva de
+
+  
+ instalaciones  de generación y consumo , en tanto la isla sur colapsó a los 5 
+segundos aproximadamente desde la separación del SEN al no ser posible controlar la caída  de la 
+frecuencia  eléctrica  con los recursos de control de contingencia existentes  en la zona centro sur, tales 
+como Esquema de Desconexión Automático de Carga por Baja Frecuencia y aporte de generación del 
+parque disponible . 
+El origen de la apertura intempestiva de los interruptores de ambos circuitos de la línea 2x500 kV 
+Nueva Maitencillo - Nueva Pan de Azúcar , de acuerdo con lo señalado por la empresa Interchile S.A., 
+propietari a de las protecciones operadas, se debería a la “ actuación no esperada e imprevista ” de la 
+función diferencial de línea (87L) de los sistemas 1 de protección de los circuitos N°1 y N°2 de la línea  
+de transmisión . La mencionada función se encontraba previamente inactiva en los relés Siemens 7SL87 
+(sistemas 1) de cada uno de los 4 extremos de la línea , producto de una “ falla del módulo de 
+comunicaciones principal ”, estando los relés Siemens 7SL87 (sistemas 2 , redundante ) con todas sus 
+funciones habilitadas (incluida la función 87L) a través del sistema de comunicaciones de respaldo. La 
+operación intempestiva de protecciones señalada ocurrió con ocasión del “ intento de recuperación del 
+canal y durante la resincronización de la función diferencial de línea de las protecciones ” 
+correspondientes a los sistemas 1 de protección.  
+Sin perjuicio de lo anterior, Interchile S.A.  indicó que aún no se tiene certeza d el origen de la “operación 
+inesperada e imprevista  de los sistemas de protección ”, situación que la empresa declaró estar 
+investigando para la entrega de sus conclusiones durante el segundo trimestre de 2025.  
+d.2 Fenómeno Físico:  
+OPE26: Falla en sistema de protección o control   
+ 
+
+=== PÁGINA 3 ===
+  Página 3 de 399   
+ d.3 Reiteración:  
+  Reiteración Fenómeno Físico en la instalación afectada:  No se han producido fallas con el mismo 
+fenómeno físico, durante los últimos 24 meses móviles.  
+  Reiteración Fenómeno Físico en instalaciones del mismo propietario : No se han producido fallas en 
+instalaciones del mismo propietario con un fenómeno físico similar, durante los últimos 24 meses 
+móviles.  
+  Cantidad de fallas (sin importar Fenómeno Físico) en la misma instalación : No se han producido fallas 
+en la misma instalación afectada, durante los últimos 24 meses móviles.  
+d.4 Fenómeno eléctrico  
+PR87L: Proteccion diferencial de línea.  
+e. Detalles de la instalación, equipo o elemento donde se produjo la falla  
+El elemento donde se originó la falla corresponde al esquema de control y comunicaciones asociado a 
+las funciones diferenciales de línea (87L) , correspondientes a los sistemas 1 de protecciones de ambos 
+circuitos de  la línea de transmisión 2x500 kV Nueva Maitencillo - Nueva Pan de Azúcar , protecciones 
+marca Siemens 7SL8 7, puesta s en servicio el 31 de mayo de 2018 según la información declarada por 
+la empresa Interchile S.A. en la plataforma Infotécnica del Coordinador. Por otra parte, esta empresa  
+señala lo siguiente:  
+“A las 15:15:41.363, en el intento de recuperación del canal y durante la resincronización de la 
+función diferencial de línea de las protecciones mencionadas, se presentó una actuación no 
+esperada e imprevista de dicha función de protección. ” 
+La empresa Interchile S.A. indica que no hubo mantenimientos realizados a los sistemas de 
+protecciones y comunicaciones asociados a la línea 2x500 KV Nueva Maitencillo - Nueva Pan de Azúcar 
+C1 y C2, durante los últimos 24 meses.  
+f. Ubicación urbana o rural según DS 327/1997  
+Urbano y rural.  
+g. Proposición del propietario respecto del origen de la falla  
+Origen de la falla según Propietario de la Instalación: Interna . 
+h. Comuna donde se presenta la falla  
+4102: Coquimbo  
+i. Fecha de entrega de la información al Coordinador  
+Con la finalidad de dar cumplimiento con lo establecido en el Título 6 -7 de la Norma Técnica de 
+Seguridad y Calidad de Servicio , las empresas coordinadas deben presentar al Coordinador con plazo 
+normativo informes de falla de 48 horas e informes de falla de 5 días posterior es a la fecha de l evento .  
+A continuación, se presenta un resumen de los informes entregados por las empresas coordinadas y 
+el estado de cumplimiento normativo. Los informes no recibidos por el CEN o entregados fuera de plazo 
+corresponden a incumplimientos. El detalle de las instala ciones y fecha de ingreso de los informes de 
+falla por cada empresa coordinada se detalla en el Anexo Nº6.  
+ 
+A continuación, se presentan los informes de fallas asociados al apagón total ocurrido el día martes 25 
+de febrero de 2025, a las 15:15 horas.  
+ 
+ 
+
+=== PÁGINA 4 ===
+  Página 4 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+ACCIONA ENERGÍA CHILE HOLDINGS S.A.  4 informes en plazo  4 informes en plazo  
+AELA EÓLICA LLANQUIHUE SPA  
+3 informes en plazo  1 informe en plazo y 2 informes no 
+recibido por el CEN  
+AELA EÓLICA NEGRETE SPA  
+3 informes en plazo  1 informe en plazo y 2 informes no 
+recibido por el CEN  
+AELA EÓLICA SARCO SPA  
+3 informes en plazo  2 informes fuera de plazo y 1 informe 
+no recibido por el CEN  
+AES ANDES S.A.  
+10 informes en plazo  9 informes en plazo y 1 informe no 
+recibido por el CEN  
+AGUAS ANTOFAGASTA S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+ALBA SPA 1 informe en plazo  1 informe en plazo  
+ALFA TRANSMISORA DE ENERGÍA S.A.  
+20 informes en plazo y 3 informes 
+fuera de plazo  17 informes en plazo, 1 informe fuera 
+de plazo y 5 informes no recibido por 
+el CEN  
+ALMEYDA SPA  1 informe en plazo  1 informe en plazo  
+ALTO JAHUEL TRANSMISORA DE ENERGÍA S.A.  2 informes fuera de plazo  2 informes en plazo  
+AMANECER SOLAR SPA  1 informe en plazo  1 informe en plazo  
+ANDES GENERACIÓN SPA  1 informe fuera de plazo  1 informe en plazo  
+ANDES SOLAR II SPA  
+4 informes en plazo  2 informes en plazo y 2 informes no 
+recibido por el CEN  
+ANDES SOLAR IV SPA  
+2 informes en plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+ANGLO AMERICAN EL SOLDADO  1 informe fuera de plazo  1 informe no recibido por el CEN  
+ANGLO AMERICAN LOS BRONCES  1 informe en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+AR ALENA SPA  1 informe en plazo  1 informe en plazo  
+AR CERRO TIGRE SPA  2 informes en plazo  2 informes en plazo  
+AR ESCONDIDO SPA  1 informe en plazo  1 informe fuera de plazo  
+AR LLANOS DEL VIENTO SPA  2 informes en plazo  2 informes en plazo  
+AR PAMPA SPA  2 informes en plazo  2 informes en plazo  
+AR PUELCHE SUR SPA  1 informe en plazo  1 informe en plazo  
+AR TCHAMMA SPA  2 informes en plazo  2 informes en plazo  
+AR VALLE ESCONDIDO SPA  2 informes en plazo  2 informes en plazo  
+ARCADIA GENERACIÓN SOLAR S.A.  4 informes en plazo  4 informes en plazo  
+ASOC. DE CANAL. SOCIEDAD DEL CANAL DE 
+MAIPO  3 informes en plazo  2 informes en plazo y 1 informe no 
+recibido por el CEN  
+ATACAMA MINERALS CHILE S.C.M.  1 informe fuera de plazo  1 informe en plazo  
+ATACAMA SOLAR SPA  1 informe en plazo  1 informe en plazo  
+AUSTRIANSOLAR CHILE CUATRO SPA  1 informe en plazo  1 informe en plazo  
+AUSTRIANSOLAR CHILE SEIS SPA  1 informe en plazo  1 informe en plazo  
+AUSTRIANSOLAR CHILE UNO SPA  2 informes en plazo  2 informes en plazo  
+BIOENERGÍAS FORESTALES SPA  1 informe en plazo  1 informe en plazo  
+BOLERO SPA  1 informe en plazo  1 informe en plazo  
+CALAMA SOLAR 2 SPA  1 informe en plazo  1 informe en plazo  
+CARTULINAS CMPC SPA  2 informes fuera de plazo  2 informes en plazo  
+CASABLANCA TRANSMISORA DE ENERGÍA S.A.  2 informes en plazo  2 informes en plazo  
+CELULOSA ARAUCO Y CONSTITUCIÓN S.A.  3 informes en plazo y 1 informe 
+fuera de plazo  4 informes en plazo  
+CEME 1 SPA  1 informe en plazo  1 informe en plazo  
+CEMENTO POLPAICO S.A.  2 informes en plazo y 1 informe 
+fuera de plazo  2 informes en plazo y 1 informe no 
+recibido por el CEN  
+CENTELLA TRANSMISIÓN S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+CENTRAL CARDONES S.A.  1 informe fuera de plazo  1 informe en plazo  
+CENTRAL COLMITO S.A.  1 informe fuera de plazo  1 informe en plazo  
+CENTRAL YUNGAY S.A.  1 informe fuera de plazo  1 informe en plazo  
+CERRO DOMINADOR PV S.A.  2 informes en plazo  2 informes en plazo  
+CGE TRANSMISIÓN S.A.  
+81 informe en plazo y 68 informes 
+fuera de plazo  137 informes en plazo, 7 informes 
+fuera de plazo y 5 informes no 
+recibido por el CEN  
+
+=== PÁGINA 5 ===
+  Página 5 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+CHARRÚA TRANSMISORA DE ENERGÍA S.A.  1 informe en plazo  1 informe en plazo  
+CHILQUINTA DISTRIBUCIÓN S.A.  29 informes fuera de plazo  29 informes en plazo  
+CHILQUINTA TRANSMISIÓN S.A.  2 informes fuera de plazo  2 informes en plazo  
+CHUNGUNGO S.A.  1 informe en plazo  1 informe en plazo  
+CIA. MINERA MANTOS DE ORO  1 informe en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+CMPC MADERAS SPA  5 informes fuera de plazo  5 informes en plazo  
+CMPC PULP SPA.  3 informes en plazo y 9 informes 
+fuera de plazo  12 informes en plazo  
+CMPC TISSUE S.A.  1 informe fuera de plazo  1 informe en plazo  
+CODELCO CHILE - DIVISIÓN ANDINA  2 informes en plazo  2 informes fuera de plazo  
+CODELCO CHILE - DIVISIÓN CHUQUICAMATA  1 informe en plazo  1 informe en plazo  
+CODELCO CHILE - DIVISIÓN EL TENIENTE  4 informes fuera de plazo  4 informes fuera de plazo  
+CODELCO CHILE - DIVISIÓN GABRIELA MISTRAL  1 informe en plazo  1 informe fuera de plazo  
+CODELCO CHILE - DIVISIÓN MINISTRO HALES  2 informes fuera de plazo  2 informes fuera de plazo  
+CODELCO CHILE - DIVISIÓN RADOMIRO TOMIC  1 informe en plazo  1 informe en plazo  
+COLBÚN S.A.  
+14 informes en plazo y 4 informes 
+fuera de plazo  14 informes en plazo, 3 informes 
+fuera de plazo y 1 informe no recibido 
+por el CEN  
+COMPAÑÍA BARRICK CHILE GENERACIÓN SPA  1 informe fuera de plazo  1 informe en plazo  
+COMPAÑÍA DISTRIBUIDORA DE ENERGÍA 
+ELÉCTRICA CODINER S.A.  9 informes en plazo  9 informes en plazo  
+COMPAÑÍA DOÑA INÉS DE COLLAHUASI SCM  2 informes fuera de plazo  2 informes en plazo  
+COMPAÑÍA ELÉCTRICA DEL LITORAL S.A.  1 informe fuera de plazo  1 informe fuera de plazo  
+COMPAÑÍA GENERAL DE ELECTRICIDAD S.A.  
+2 informes en plazo y 252 informes 
+fuera de plazo  161 informe en plazo, 73 informes 
+fuera de plazo y 20 informes no 
+recibido por el CEN  
+COMPAÑÍA MINERA CERRO COLORADO Ltda 1 informe fuera de plazo  1 informe en plazo  
+COMPAÑÍA MINERA CERRO NEGRO S.A.  1 informe fuera de plazo  1 informe fuera de plazo  
+COMPAÑÍA MINERA DEL PACÍFICO S.A.  6 informes fuera de plazo  6 informes no recibido por el CEN  
+COMPAÑÍA MINERA LOMAS BAYAS  1 informe en plazo  1 informe fuera de plazo  
+COMPAÑÍA MINERA NEVADA SPA  1 informe en plazo  1 informe en plazo  
+COMPAÑÍA MINERA TECK CARMEN DE 
+ANDACOLLO  1 informe en plazo  1 informe en plazo  
+COMPAÑÍA MINERA TECK QUEBRADA BLANCA 
+S.A. 1 informe en plazo  1 informe en plazo  
+COMPAÑÍA MINERA ZALDÍVAR SPA  1 informe en plazo  1 informe en plazo  
+COMPAÑÍA SIDERURGICA HUACHIPATO S.A.  1 informe fuera de plazo  1 informe en plazo  
+COMPAÑÍA TRANSMISORA DEL NORTE GRANDE 
+S.A. 1 informe fuera de plazo  1 informe en plazo  
+COMPLEJO METALÚRGICO ALTONORTE S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+CONEJO SOLAR SPA  2 informes en plazo  2 informes en plazo  
+CONSORCIO SANTA MARTA S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+COOPERATIVA DE ABASTECIMIENTO DE ENERGÍA 
+ELÉCTRICA CURICO Ltda. 3 informes fuera de plazo  3 informes en plazo  
+COOPERATIVA DE CONSUMO DE ENERGÍA 
+ELÉCTRICA CHILLÁN Ltda. 8 informes en plazo y 1 informe 
+fuera de plazo  9 informes en plazo  
+COOPERATIVA ELÉCTRICA CHARRÚA Ltda. 3 informes en plazo  3 informes en plazo  
+COOPERATIVA ELÉCTRICA LOS ANGELES Ltda 10 informes fuera de plazo  10 informes en plazo  
+COOPERATIVA ELÉCTRICA PAILLACO Ltda 2 informes fuera de plazo  2 informes en plazo  
+COOPERATIVA REGIONAL ELÉCTRICA 
+LLANQUIHUE Ltda 3 informes en plazo  3 informes en plazo  
+COOPERATIVA RURAL ELÉCTRICA RÍO BUENO 
+Ltda. 4 informes fuera de plazo  4 informes en plazo  
+COPEC RENOVABLES SPA  1 informe en plazo  1 informe en plazo  
+CRISTALERÍAS DE CHILE S.A.  1 informe en plazo  1 informe en plazo  
+CUMBRES SPA  1 informe en plazo  1 informe en plazo  
+DIEGO DE ALMAGRO TRANSMISORA DE ENERGÍA 
+S.A. 2 informes en plazo  2 informes en plazo  
+
+=== PÁGINA 6 ===
+  Página 6 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+DON ARTURO SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+DON ESTEBAN SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+DOÑA ANTONIA SOLAR SPA  1 informe en plazo  1 informe fuera de plazo  
+DUQUECO SPA  
+6 informes en plazo  4 informes en plazo, 1 informe fuera 
+de plazo y 1 informe no recibido por el 
+CEN 
+ECOMETALES LIMITED, AGENCIA EN CHILE  1 informe fuera de plazo  1 informe en plazo  
+EDELNOR TRANSMISIÓN S.A.  2 informes en plazo  2 informes fuera de plazo  
+EDGECONNEX CHILE V SPA  1 informe fuera de plazo  1 informe en plazo  
+EKA CHILE S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+EL PELÍCANO SOLAR COMPANY SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+ELÉCTRICA DIGUA SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+ELÉCTRICA NUEVA ENERGÍA S.A.  1 informe en plazo  1 informe fuera de plazo  
+ELÉCTRICA PUNTILLA S.A.  1 informe en plazo y 2 informes 
+fuera de plazo  3 informes en plazo  
+ELEKTRA GENERACIÓN S.A.  3 informes en plazo  3 informes en plazo  
+ELETRANS II S.A.  1 informe fuera de plazo  1 informe en plazo  
+ELETRANS III S.A.  1 informe fuera de plazo  1 informe en plazo  
+ELETRANS S.A.  2 informes fuera de plazo  2 informes en plazo  
+EMPRESA DE TRANSMISIÓN ELÉCTRICA 
+TRANSEMEL S.A.  5 informes fuera de plazo  5 informes en plazo  
+EMPRESA DE TRANSPORTE DE PASAJEROS 
+METRO S.A.  1 informe fuera de plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA ANGAMOS SPA  2 informes en plazo  2 informes en plazo  
+EMPRESA ELÉCTRICA CAPULLO S.A.  1 informe fuera de plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA CARÉN S.A.  3 informes en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 3 informes no 
+recibido por el CEN  
+EMPRESA ELÉCTRICA COCHRANE SPA  2 informes en plazo  2 informes en plazo  
+EMPRESA ELÉCTRICA DE LA FRONTERA S.A.  1 informe fuera de plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA DIEGO DE ALMAGRO SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+EMPRESA ELÉCTRICA LA LEONERA S.A.  1 informe fuera de plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA PEHUENCHE S.A.  3 informes fuera de plazo  3 informes en plazo  
+EMPRESA ELÉCTRICA PORTEZUELO SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+EMPRESA ELÉCTRICA PUENTE ALTO S.A.  4 informes fuera de plazo  4 informes en plazo  
+EMPRESA ELÉCTRICA RUCATAYO S.A.  1 informe en plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA VALLENAR S.A.  1 informe fuera de plazo  1 informe en plazo  
+EMPRESA ELÉCTRICA VENTANAS SPA  1 informe en plazo  1 informe en plazo  
+EMPRESA ELÉCTRICAS AGUAS DEL MELADO SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+EMPRESA NACIONAL DE MINERÍA, FUNDICIÓN 
+HERNÁN VIDELA LIRA  2 informes en plazo  2 informes en plazo  
+ENAP REFINERÍAS S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+ENAP REFINERIAS S.A. - ACONCAGUA  1 informe fuera de plazo  1 informe no recibido por el CEN  
+ENEL DISTRIBUCIÓN CHILE S.A.  1 informe fuera de plazo  1 informe en plazo  
+ENEL GENERACIÓN CHILE S.A.  3 informes en plazo y 35 informes 
+fuera de plazo  37 informes en plazo y 1 informe no 
+recibido por el CEN  
+ENEL GREEN POWER CHILE S.A.  19 informes en plazo y 7 informes 
+fuera de plazo  25 informes en plazo y 1 informe no 
+recibido por el CEN  
+ENERBLAN SPA  1 informe fuera de plazo  1 informe en plazo  
+ENERGÍA CERRO EL MORADO S.A.  1 informe en plazo  1 informe en plazo  
+ENERGÍA COYANCO S.A.  
+3 informes en plazo  1 informe en plazo y 2 informes no 
+recibido por el CEN  
+ENERGÍA DE CASABLANCA S.A.  1 informe fuera de plazo  1 informe en plazo  
+ENERGÍA EÓLICA LOS OLMOS SPA  1 informe en plazo  1 informe en plazo  
+ENERGÍA EÓLICA MESAMÁVIDA SPA  1 informe en plazo  1 informe en plazo  
+ENERGÍA EÓLICA SAN MATÍAS SPA  1 informe en plazo  1 informe en plazo  
+ENERGÍA PACÍFICO S.A.  1 informe en plazo  1 informe en plazo  
+ENERGÍA SIETE SPA  1 informe fuera de plazo  1 informe en plazo  
+
+=== PÁGINA 7 ===
+  Página 7 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+ENERGÍAS UCUQUER DOS S.A.  1 informe fuera de plazo  1 informe en plazo  
+ENFRAGEN CHILE SOLAR SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+ENGIE ENERGÍA CHILE S.A.  22 informes en plazo y 1 informe 
+fuera de plazo  14 informes en plazo y 9 informes 
+fuera de plazo  
+ENLASA GENERACIÓN CHILE S.A.  6 informes en plazo  6 informes en plazo  
+ENORCHILE S.A.  
+4 informes fuera de plazo  3 informes en plazo y 1 informe fuera 
+de plazo  
+EÓLICA LA ESPERANZA S.A.  1 informe en plazo  1 informe en plazo  
+EÓLICA LA ESTRELLA SPA  1 informe fuera de plazo  1 informe en plazo  
+EÓLICA MONTE REDONDO SPA  1 informe en plazo  1 informe en plazo  
+ESPINOS S.A.  4 informes en plazo  4 informes en plazo  
+FOTOVOLTAICA DE LOS ANDES SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+FOTOVOLTAICA DEL DESIERTO SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+FOTOVOLTAICA NORTE GRANDE 1 SPA  
+2 informes fuera de plazo  1 informe en plazo y 1 informe fuera 
+de plazo  
+FOTOVOLTAICA NORTE GRANDE 5 SPA  1 informe fuera de plazo  1 informe en plazo  
+GENERACIÓN DE ENERGÍA NUEVA DEGAN SPA  
+3 informes fuera de plazo  1 informe en plazo y 2 informes fuera 
+de plazo  
+GENERACIÓN SOLAR SPA  1 informe fuera de plazo  1 informe en plazo  
+GENERADORA ANTILHUE SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+GENERADORA DEL PACÍFICO SPA  
+3 informes fuera de plazo  1 informe en plazo y 2 informes fuera 
+de plazo  
+GENERADORA METROPOLITANA SPA  3 informes en plazo  3 informes en plazo  
+GENERADORA NORTH WEST SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+GENERADORA SOL SOLIV SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+GEOTÉRMICA DEL NORTE S.A.  1 informe en plazo  1 informe en plazo  
+GPG GENERACIÓN DISTRIBUIDA SPA  1 informe fuera de plazo  1 informe en plazo  
+GPG SOLAR CHILE 2017 SPA  1 informe fuera de plazo  1 informe en plazo  
+GR ALGARROBO SPA  1 informe en plazo  1 informe en plazo  
+GR LIUN SPA  1 informe en plazo  1 informe en plazo  
+GUACOLDA ENERGÍA SPA  
+11 informe fuera de plazo  8 informes en plazo, 2 informes fuera 
+de plazo y 1 informe no recibido por el 
+CEN 
+GUANACO COMPAÑÍA MINERA SPA  1 informe en plazo  1 informe en plazo  
+HIDROANGOL SPA  1 informe en plazo  1 informe en plazo  
+HIDROELECTRICA DOS VALLES SPA  2 informes fuera de plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA EL PASO SPA  2 informes fuera de plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA EMBALSE ANCOA SPA  1 informe en plazo  1 informe en plazo  
+HIDROELÉCTRICA LA CONFLUENCIA S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+HIDROELÉCTRICA LA HIGUERA S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+HIDROELÉCTRICA LAS JUNTAS S.A.  1 informe en plazo  1 informe en plazo  
+HIDROELÉCTRICA LOS CORRALES SPA  2 informes en plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA PALACIOS SPA  2 informes en plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA PIEDRAS NEGRAS SPA  2 informes en plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA PUNTA DEL VIENTO SPA  2 informes en plazo  2 informes no recibido por el CEN  
+HIDROELÉCTRICA RÍO COLORADO S.A.  1 informe en plazo  1 informe en plazo  
+HIDROELÉCTRICA RÍO HUASCO S.A.  2 informes en plazo  2 informes en plazo  
+HIDROELÉCTRICA RÍO LIRCAY S.A.  5 informes en plazo  5 informes no recibido por el CEN  
+HIDROELÉCTRICA SAN ANDRÉS SPA  2 informes en plazo  2 informes no recibido por el CEN  
+HIDROENERSUR SPA  5 informes en plazo  5 informes en plazo  
+HIDROPALMAR SPA  1 informe en plazo  1 informe en plazo  
+IBEREÓLICA CABO LEONES II S.A.  1 informe en plazo  1 informe en plazo  
+INDURA S.A.  2 informes fuera de plazo  2 informes en plazo  
+INNOVACIÓN ENERGÍA S.A.  1 informe fuera de plazo  1 informe en plazo  
+
+=== PÁGINA 8 ===
+  Página 8 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+INTERCHILE S.A.  1 informe en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 1 informe fuera 
+de plazo  
+INVERSIONES FOTOVOLTAICAS SPA  1 informe en plazo  1 informe fuera de plazo  
+JAVIERA SPA  1 informe en plazo  1 informe en plazo  
+KDM ENERGÍA S.A.  1 informe en plazo  1 informe no recibido por el CEN  
+KELTI S.A.  1 informe fuera de plazo  1 informe fuera de plazo  
+LICÁN SPA  1 informe en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+LITORAL TRANSMISIÓN S.A.  1 informe fuera de plazo  1 informe en plazo  
+LUZLINARES S.A.  4 informes en plazo  4 informes fuera de plazo  
+LUZPARRAL S.A.  4 informes en plazo  4 informes fuera de plazo  
+LUZPARRAL TRANSMISIÓN S.A.  1 informe fuera de plazo  1 informe en plazo  
+MADERAS ARAUCO S.A.  3 informes en plazo  3 informes en plazo  
+MANTOS COPPER S.A.  1 informe en plazo  1 informe en plazo  
+MANTOVERDE S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+MASISA S.A.  1 informe fuera de plazo  1 informe en plazo  
+MATAQUITO TRANSMISORA DE ENERGÍA S.A.  1 informe en plazo  1 informe en plazo  
+MELON S.A  1 informe en plazo  1 informe en plazo  
+MINERA CENTINELA  2 informes en plazo y 1  informe 
+fuera de plazo  2 informes fuera de plazo y 1 informe 
+no recibido por el CEN  
+MINERA ESCONDIDA Ltda. 4 informes fuera de plazo  4 informes fuera de plazo  
+MINERA LAS CENIZAS S.A.  2 informes en plazo  2 informes no recibido por el CEN  
+MINERA LOS PELAMBRES  2 informes fuera de plazo  2 informes en plazo  
+MINERA MERIDIAN Ltda. 1 informe fuera de plazo  1 informe en plazo  
+MINERA SPENCE S.A.  1 informe en plazo  1 informe en plazo  
+MINERA VALLE CENTRAL S.A.  2 informes fuera de plazo  2 informes en plazo  
+MLP TRANSMISION S.A.  1 informe fuera de plazo  1 informe en plazo  
+MOLY -COP CHILE S.A.  2 informes fuera de plazo  2 informes en plazo  
+NEOMAS SPA  1 informe fuera de plazo  1 informe no recibido por el CEN  
+NIRIVILO TRANSMISORA DE ENERGÍA S.A.  2 informes fuera de plazo  2 informes fuera de plazo  
+NORACID S.A.  1 informe fuera de plazo  1 informe en plazo  
+NORVIND S.A.  1 informe en plazo  1 informe en plazo  
+OCCIDENTAL CHEMICAL CHILE Ltda. 1 informe en plazo  1 informe no recibido por el CEN  
+PACIFIC HYDRO CHACAYES S.A.  1 informe en plazo  1 informe en plazo  
+PACIFIC HYDRO PUNTA SIERRA SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+PACIFIC HYDRO TRANSMISIÓN S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+PALMUCHO S.A.  2 informes fuera de plazo  2 informes en plazo  
+PAPELES CORDILLERA SPA  1 informe fuera de plazo  1 informe en plazo  
+PAPELES RÍO VERGARA S.A.  1 informe fuera de plazo  1 informe en plazo  
+PARQUE EÓLICO CABO LEONES I S.A.  1 informe en plazo  1 informe en plazo  
+PARQUE EÓLICO CAMPO LINDO SPA  1 informe en plazo  1 informe en plazo  
+PARQUE EÓLICO EL ARRAYÁN SPA  1 informe fuera de plazo  1 informe en plazo  
+PARQUE EÓLICO EL MAITÉN SPA  1 informe fuera de plazo  1 informe en plazo  
+PARQUE EÓLICO LEBU -TORO SPA  
+2 informes en plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+PARQUE EÓLICO LOS CURUROS SPA  1 informe en plazo  1 informe en plazo  
+PARQUE EÓLICO PUNTA DE TALCA SPA 
+[En_Revision]  1 informe fuera de plazo  1 informe en plazo  
+PARQUE EÓLICO SAN GABRIEL SPA  1 informe en plazo  1 informe en plazo  
+PARQUE FOTOVOLTAICO NUEVO QUILLAGUA SPA  1 informe en plazo  1 informe en plazo  
+PARQUE SOLAR FOTOVOLTAICO SOL DEL 
+DESIERTO SPA  1 informe en plazo  1 informe en plazo  
+PARQUE SOLAR LEYDA SPA [EN_REVISION]  1 informe fuera de plazo  1 informe en plazo  
+PARQUE SOLAR QUILMO SPA  1 informe en plazo  1 informe en plazo  
+
+=== PÁGINA 9 ===
+  Página 9 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+PARQUE SOLAR SOL DEL NORTE SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+PARQUE SOLAR VIVEROS SPA [En_Revision]  1 informe fuera de plazo  1 informe en plazo  
+PARQUE TALINAY ORIENTE S.A.  1 informe en plazo  1 informe en plazo  
+PATAGUILLA SOLAR SPA [En_Revision]  1 informe fuera de plazo  1 informe fuera de plazo  
+PE CABO LEONES III SPA  1 informe en plazo  1 informe en plazo  
+PLANTA SOLAR SAN PEDRO III SPA  2 informes en plazo  2 informes en plazo  
+PLANTA SOLAR TOCOPILLA SPA  1 informe en plazo  1 informe fuera de plazo  
+POZO ALMONTE SOLAR 2 S.A.  1 informe fuera de plazo  1 informe en plazo  
+POZO ALMONTE SOLAR 3 S.A.  1 informe fuera de plazo  1 informe en plazo  
+PRIME ENERGÍA QUICKSTART SPA  6 informes fuera de plazo  6 informes fuera de plazo  
+PUNTA PALMERAS S.A.  1 informe en plazo  1 informe en plazo  
+PV SALVADOR S.A.  1 informe en plazo y 1 informe 
+fuera de plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+RED ELÉCTRICA DEL NORTE 2 S.A.  1 informe en plazo  1 informe en plazo  
+RED ELÉCTRICA DEL NORTE S.A.  1 informe en plazo  1 informe en plazo  
+RÍO ALTO SPA  1 informe en plazo  1 informe en plazo  
+RUCASOL SpA [EN_REVISION]  1 informe fuera de plazo  1 informe no recibido por el CEN  
+SAN ANDRÉS SPA  
+2 informes fuera de plazo  1 informe en plazo y 1 informe no 
+recibido por el CEN  
+SAN JUAN S.A.  1 informe en plazo  1 informe en plazo  
+SANTA ESTER SOLAR SPA 1 informe fuera de plazo  1 informe en plazo  
+SANTIAGO SOLAR S.A.  1 informe en plazo  1 informe en plazo  
+SIERRA GORDA SCM  1 informe fuera de plazo  1 informe en plazo  
+SISTEMA DE TRANSMISIÓN DEL NORTE S.A.  1 informe fuera de plazo  1 informe en plazo  
+SISTEMA DE TRANSMISIÓN DEL SUR S.A.  7 informes fuera de plazo  7 informes en plazo  
+SOCIEDAD AUSTRAL DE ELECTRICIDAD S.A.  2 informes fuera de plazo  2 informes en plazo  
+SOCIEDAD AUSTRAL DE TRANSMISIÓN TRONCAL 
+S.A. 1 informe fuera de plazo  1 informe en plazo  
+SOCIEDAD CONCESIONARIA EMBALSE 
+CONVENTO VIEJO S.A.  2 informes en plazo  2 informes fuera de plazo  
+SOCIEDAD CONTRACTUAL MINERA EL ABRA  1 informe fuera de plazo  1 informe no recibido por el CEN  
+SOCIEDAD GNL MEJILLONES S.A.  1 informe fuera de plazo  1 informe no recibido por el CEN  
+SOCIEDAD QUÍMICA Y MINERA DE CHILE S.A.  2 informes en plazo y 1 informe 
+fuera de plazo  3 informes en plazo  
+SOCIEDAD TRANSMISORA METROPOLITANA S.A.  7 informes fuera de plazo  7 informes en plazo  
+SOLAR ELENA SPA  1 informe en plazo  1 informe en plazo  
+SOLAR LOS LOROS SPA  1 informe en plazo  1 informe en plazo  
+SONNEDIX DON GOYO TRANSMISIÓN S.A.  1 informe fuera de plazo  1 informe en plazo  
+SQM SALAR S.A.  1 informe en plazo  1 informe en plazo  
+STATKRAFT EOLICO S.A.  1 informe fuera de plazo  1 informe en plazo  
+SUBESTACIÓN PUCHUNCAVÍ S.A.  1 informe fuera de plazo  1 informe en plazo  
+TAMAKAYA ENERGÍA SPA  1 informe fuera de plazo  1 informe fuera de plazo  
+TAMARICO SOLAR DOS SPA  1 informe en plazo  1 informe fuera de plazo  
+TERCERA REGIÓN SOLAR SPA  1 informe en plazo  1 informe en plazo  
+TRANSELEC S.A.  6 informes en plazo y 10 informes 
+fuera de plazo  3 informes en plazo y 13 informes 
+fuera de plazo  
+TRANSMISORA BAQUEDANO S.A.  1 informe fuera de plazo  1 informe en plazo  
+TRANSMISORA ELÉCTRICA CORDILLERA SPA  3 informes en plazo  3 informes en plazo  
+TRANSMISORA ELÉCTRICA DE QUILLOTA S.A.  2 informes en plazo  2 informes en plazo  
+TRANSMISORA ELÉCTRICA DEL NORTE S.A.  4 informes en plazo  4 informes en plazo  
+TRANSMISORA MEJILLONES S.A.  1 informe fuera de plazo  1 informe en plazo  
+TRANSMISORA MELIPEUCO S.A.  2 informes en plazo  2 informes en plazo  
+TRANSQUINTA S.A.  3 informes fuera de plazo  3 informes en plazo  
+TSGF SPA  1 informe fuera de plazo  1 informe en plazo  
+
+=== PÁGINA 10 ===
+  Página 10 de 399   
+ Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 15:16 horas del  
+27-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 04-03-2025  
+VIENTOS DE RENAICO SPA  1 informe en plazo  1 informe en plazo  
+WPD DUQUECO SPA  1 informe en plazo  1 informe en plazo  
+WPD MALLECO SPA  2 informes en plazo  2 informes en plazo  
+WPD NEGRETE SPA  1 informe en plazo  1 informe en plazo  
+ 
+A continuación, se presentan los informes de falla de los eventos ocurridos el día miércoles 26 de 
+febrero  de 2025,  relacionados con los efectos de l apagón total ocurrido el día  anterior . 
+ 
+Empresa  Informe de fallas de 48 horas  
+Plazo Máximo: 28-02-2025  Informe de fallas de 5 días  
+Plazo Máximo: 06 -03-2025  
+CGE TRANSMISIÓN S.A.  
+18 informes en plazo  13 informes en plazo, 4 informes 
+fuera de plazo y 1 informe no recibido 
+por el CEN  
+COMPAÑÍA GENERAL DE ELECTRICIDAD S.A.  1 informe fuera de plazo  1 informe fuera de plazo  
+EMPRESA DE TRANSMISIÓN ELÉCTRICA 
+TRANSEMEL S.A.  1 informe fuera de plazo  1 informe en plazo  
+SOCIEDAD AUSTRAL DE TRANSMISIÓN 
+TRONCAL S.A.  1 informe fuera de plazo  1 informe en plazo  
+SOCIEDAD QUÍMICA Y MINERA DE CHILE S.A. 1 informe en plazo  1 informe en plazo  
+TRANSELEC S.A.  1 informe en plazo  1 informe en plazo  
+ 
+A continuación, se detallan aquellas instalaciones en el sistema de distribución, junto con su empresa 
+asociada, que no ingresaron informes de falla en plazo normativo en la plataforma del Coordinador 
+destinada para estos fines, así como tampoco declarado las pérdidas de consumo en dicha instalación 
+ocasionada por la falla en análisis.  
+ 
+
+=== PÁGINA 11 ===
+  Página 11 de 399   
+  Empresa Distribuidora  Subestación  
+COMPAÑIA GENERAL DE ELECTRICIDAD S.A.  S/E Ancoa  
+S/E Arica  
+S/E Chacahuín  
+S/E Central Cipreses  
+S/E Cocharcas (CGE)  
+S/E Cóndores  
+S/E Copiapó  
+S/E El Espino  
+S/E Hualañé  
+S/E Hualte  
+S/E La Palma  
+S/E La Vega  
+S/E Licantén  
+S/E Linares Norte  
+S/E Los Maquis (CGE)  
+S/E Molina  
+S/E Nirivilo  
+S/E Panguilemo  
+S/E Parinacota  
+S/E Parronal  
+S/E Portezuelo  
+S/E Puquillay  
+S/E Quirihue  
+S/E Ranguilí  
+S/E San Carlos  
+S/E San Gregorio  
+S/E San Javier  
+S/E San Miguel  
+S/E San Rafael  
+S/E Santa Cruz 
+S/E Santa Elvira  
+S/E Tarapacá  
+S/E Villa Alegre  
+S/E Villa Prat  
+S/E Vallenar  
+S/E Yerbas Buenas  
+COOPERATIVA ELÉCTRICA CHARRÚA Ltda.  S/E Laja  
+S/E Negrete  
+ENERGÍA DE CASABLANCA S.A.  S/E San Jerónimo  
+LUZLINARES S.A.  S/E Longaví  
+S/E Nirivilo  
+S/E San Javier  
+SOCIEDAD AUSTRAL DE ELECTRICIDAD S.A.  S/E Armazones  
+SOCIEDAD INGENIERIA ELECTRICA MATAQUITO Ltda.  S/E Castilla  
+COOPERATIVA DE ABASTECIMIENTO DE ENERGÍA ELÉCTRICA SOCOROMA Ltda  S/E Central Chapiquiña  
+ 
+  
