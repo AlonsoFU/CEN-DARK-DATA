@@ -87,10 +87,10 @@ done
 
 See **`docling_layout/METHODOLOGY/`** for full documentation:
 
-- **RESUMEN_METODOLOGIA.md** - Quick summary (this is the starting point)
-- **EAF_PATCH_ARCHITECTURE.md** - Monkey patch architecture
-- **UNIVERSAL_DOCLING_METHODOLOGY.md** - Complete guide (400+ lines)
-- **QUICK_START_GUIDE.md** - 1-page reference
+- **RESUMEN_METODOLOGIA.md** - Complete methodology summary (⭐ start here)
+- **EAF_PATCH_ARCHITECTURE.md** - Monkey patch architecture details
+- **QUICK_START_GUIDE.md** - 1-page quick reference
+- **DOCLING_CONFIG_QUICK_REFERENCE.md** - Configuration options reference
 
 ### Key Concepts
 
@@ -115,7 +115,7 @@ pipeline_options.do_ocr = True
 pipeline_options.table_structure_options.mode = TableFormerMode.ACCURATE
 ```
 
-See `docling_layout/METHODOLOGY/COMPLETE_DOCLING_CONFIG_OPTIONS.md` for all options.
+See `docling_layout/METHODOLOGY/DOCLING_CONFIG_QUICK_REFERENCE.md` for all options.
 
 ---
 
