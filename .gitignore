@@ -285,3 +285,30 @@ anthropic_key.txt
 # Local configuration
 config/local_*.yml
 config/local_*.json
+
+# ===========================================
+# EAF Extraction System - Docling Layout
+# ===========================================
+
+# Chapter outputs (heavy JSON and PDFs)
+shared_folder/docling_layout/capitulo_*/outputs/
+**/capitulo_*/outputs/*.json
+**/capitulo_*/outputs/*.pdf
+
+# Processing logs
+shared_folder/docling_layout/eaf_patch/scripts/*.log
+
+# Model weights and cache
+*.pth
+*.pt
+*.onnx
+*.bin
+*.safetensors
+.huggingface/
+
+# Experimental/test folders
+prueba/
+test_outputs/
+
+# Keep structure with .gitkeep
+!**/outputs/.gitkeep
