@@ -205,8 +205,8 @@ def _patched_process_regular_clusters(self):
                 'label': cluster.label
             })
 
-    # Add all cell bboxes
-    docling_blocks = []
+    # Add all cell bboxes to docling_boxes (for overlap check only)
+    # But DON'T add to docling_blocks - we skip analyzing table cells
     for cell in self.cells:
         bbox_obj = cell.rect.to_bounding_box()
         bbox_dict = {
@@ -220,14 +220,9 @@ def _patched_process_regular_clusters(self):
             'source': 'cell',
             'text': cell.text
         })
-        docling_blocks.append({
-            'bbox': bbox_dict,
-            'text': cell.text,
-            'page': self.page.page_no,
-            'cell': cell
-        })
 
     print(f"📊 [PATCH] Docling has {len(docling_boxes)} boxes ({len(self.regular_clusters)} clusters + {len(self.cells)} cells)")
+    print(f"⚡ [PATCH] Optimization: Skipping {len(self.cells)} table cells in heavy analysis")
 
     # ========================================================================
     # STEP 3: Find lines with NO coverage by ANY Docling box
@@ -278,9 +273,9 @@ def _patched_process_regular_clusters(self):
     # ========================================================================
     # STEP 4: Add missing lines to blocks for processing
     # ========================================================================
-    # We'll process these as "pseudo-blocks" since we can't modify self.cells directly
-    # (Docling's cells are already processed)
-    all_blocks = docling_blocks + [
+    # OPTIMIZATION: We only analyze missing_lines, NOT table cells
+    # Table cells don't contain titles, company names, or list items
+    all_blocks = [
         {
             'bbox': line['bbox'],
             'text': line['text'],
@@ -292,7 +287,7 @@ def _patched_process_regular_clusters(self):
         for line in missing_lines
     ]
 
-    print(f"📦 [PATCH] Total blocks to analyze: {len(all_blocks)} ({len(docling_blocks)} Docling + {len(missing_lines)} missing)")
+    print(f"📦 [PATCH] Total blocks to analyze: {len(all_blocks)} (only missing lines, skipped {len(self.cells)} table cells)")
 
     # ========================================================================
     # STEP 5: Detect Missing Titles (ONLY in missing lines!)

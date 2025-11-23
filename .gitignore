@@ -290,6 +290,12 @@ config/local_*.json
 # EAF Extraction System - Docling Layout
 # ===========================================
 
+# Data directory (inputs and outputs)
+data/inputs/*
+data/outputs/*
+!data/inputs/.gitkeep
+!data/outputs/.gitkeep
+
 # Chapter outputs (heavy JSON and PDFs)
 shared_folder/docling_layout/capitulo_*/outputs/
 **/capitulo_*/outputs/*.json
