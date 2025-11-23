@@ -94,15 +94,21 @@ La primera vez descarga modelos (~2GB, 20-30 min). Ejecuciones posteriores son 4
 cd shared_folder/docling_layout
 source ../../venv/bin/activate
 
-python3 EXTRACT_ANY_CHAPTER.py 1    # Capítulo 1
-python3 EXTRACT_ANY_CHAPTER.py 6    # Capítulo 6
+# Básico (usa defaults)
+python3 EXTRACT_ANY_CHAPTER.py 1
+
+# Especificando report
+python3 EXTRACT_ANY_CHAPTER.py 1 --report EAF-089-2025
+
+# Con rutas personalizadas
+python3 EXTRACT_ANY_CHAPTER.py 1 --report EAF-090-2026 --input ./data/inputs --output ./data/outputs
 ```
 
 ### Extraer Todos los Capítulos
 
 ```bash
 for i in {1..11}; do
-  python3 EXTRACT_ANY_CHAPTER.py $i
+  python3 EXTRACT_ANY_CHAPTER.py $i --report EAF-089-2025
 done
 ```
 
@@ -121,10 +127,10 @@ python3 EXTRACT_ANY_CHAPTER.py 1 --pages 1-50
 
 ## Pipeline de Procesamiento
 
-El sistema procesa en 4 etapas:
+El sistema procesa en 6 etapas:
 
 ```
-PDF → [1. Docling + Monkey Patch] → [2. Smart Reclassification] → [3. Hierarchy] → [4. Metadata] → JSON
+PDF → [1. Docling + Patch] → [2. Reclassification] → [3. Isolated Fix] → [4. Table Reextract] → [5. Hierarchy] → [6. Metadata] → JSON
 ```
 
 ### 1. Docling + EAF Monkey Patch
@@ -135,17 +141,42 @@ Intercepta el pipeline de Docling y aplica:
 - Clasificación de líneas de poder (kV)
 - Continuidad de listas cross-page
 
-### 2. Smart Reclassification (9 partes)
+### 2. Smart Reclassification (10 partes)
 
-Reclasifica elementos mal detectados:
-- Secuencias de bullets
-- Patrones enumerados (a, b, c)
-- Títulos de zona/área
-- Captions de tablas
+Reclasifica elementos mal detectados (`enumerated_item_fix.py`):
+- PART 1-3: Secuencias de bullets y numeración
+- PART 4-6: Patrones enumerados (a, b, c)
+- PART 7-8: Títulos de zona/área y captions
+- PART 9: Listas aisladas
+- PART 10: Normalización de headers similares
 
-### 3. Hierarchy Restructure
+### 3. Isolated List Fix
 
-Construye jerarquía padre-hijo usando patrones:
+Corrige listas que quedaron aisladas sin contexto (`isolated_list_fix.py`).
+
+### 4. Table Re-extraction ⭐ NUEVO
+
+Re-extrae contenido de tablas usando PyMuPDF (`table_reextract.py`):
+- Usa bounding boxes correctos de Docling
+- Reemplaza extracción fallida de TableFormer
+- Clasifica tipo de tabla y aplica extractor específico
+- Genera estructura simplificada para LLMs:
+  ```json
+  {
+    "headers": ["Col1", "Col2", ...],
+    "rows": [["val1", "val2", ...], ...]
+  }
+  ```
+
+**Extractores específicos:**
+- `costos_horarios` - Tablas de costos por hora (1-24)
+- `hidroelectricas` - Tablas de centrales hidroeléctricas
+- `demanda_generacion` - Tablas de demanda/generación
+- `generic` - Extractor genérico por defecto
+
+### 5. Hierarchy Restructure
+
+Construye jerarquía padre-hijo usando patrones (`hierarchy_restructure.py`):
 - `1.`, `2.` → Nivel 1
 - `1.1`, `2.3` → Nivel 2
 - `a)`, `b)` → Nivel 3
@@ -153,9 +184,9 @@ Construye jerarquía padre-hijo usando patrones:
 
 Popula arrays `children[]` con referencias `$ref`.
 
-### 4. Metadata Date Extractor
+### 6. Metadata Date Extractor
 
-Extrae fechas a metadata:
+Extrae fechas a metadata (`metadata_date_extractor.py`):
 - `fecha_emision`
 - `fecha_falla`
 - `hora_falla`
@@ -212,53 +243,63 @@ capitulo_XX/outputs/
 
 ## Procesar Nuevo Informe
 
-### Opción A: Mismo Formato (Informe EAF)
+### Paso 1: Preparar Archivos
 
-1. **Dividir PDF** en capítulos (usar herramienta externa)
-
-2. **Colocar archivos** en:
-   ```
-   /ruta/base/capitulo_XX/nombre_capitulo_XX_pages_N-M.pdf
-   ```
-
-3. **Actualizar** `EXTRACT_ANY_CHAPTER.py`:
-   ```python
-   # Línea 27-39: Actualizar CHAPTER_RANGES
-   CHAPTER_RANGES = {
-       1: (1, 15),
-       2: (16, 100),
-       # ...
-   }
-
-   # Línea 72-73: Actualizar ruta base
-   base_pdf = Path("/ruta/a/tus/pdfs")
-   pdf_path = base_pdf / f"capitulo_{chapter_num:02d}" / f"NUEVO_INFORME_capitulo_{chapter_num:02d}_pages_{start}-{end}.pdf"
-   ```
-
-4. **Extraer**:
+1. **Crear carpeta** para el nuevo report en `data/inputs/`:
    ```bash
-   for i in {1..N}; do python3 EXTRACT_ANY_CHAPTER.py $i; done
+   mkdir -p data/inputs/EAF-090-2026
    ```
 
-### Opción B: PDF Único
-
-1. **Modificar** `EXTRACT_ANY_CHAPTER.py`:
-   ```python
-   # Cambiar líneas 72-73
-   pdf_path = Path("/ruta/completa/tu_archivo.pdf")
+2. **Colocar PDFs** divididos por capítulo:
+   ```
+   data/inputs/EAF-090-2026/
+   ├── capitulo_01.pdf
+   ├── capitulo_02.pdf
+   └── ...
    ```
 
-2. **Ejecutar** con rango:
-   ```bash
-   python3 EXTRACT_ANY_CHAPTER.py 1 --pages 1-100
+   O con el nombre alternativo:
+   ```
+   EAF-090-2026_capitulo_01_pages_1-20.pdf
    ```
 
-### Opción C: Script Genérico (Recomendado para Nuevo Desarrollo)
+### Paso 2: Configurar Capítulos
 
-Crear script que acepte cualquier PDF:
-```bash
-python3 extract_generic.py /ruta/al/archivo.pdf --output ./outputs/
+Agregar el nuevo report en `EXTRACT_ANY_CHAPTER.py`:
+
+```python
+REPORT_CHAPTERS = {
+    "EAF-089-2025": {...},  # Existente
+    "EAF-090-2026": {       # Nuevo
+        1: (1, 20),
+        2: (21, 100),
+        3: (101, 150),
+        # ...
+    },
+}
 ```
+
+### Paso 3: Extraer
+
+```bash
+cd shared_folder/docling_layout
+source ../../venv/bin/activate
+
+for i in {1..N}; do
+  python3 EXTRACT_ANY_CHAPTER.py $i --report EAF-090-2026
+done
+```
+
+### Resultados
+
+Los outputs van a:
+```
+data/outputs/EAF-090-2026/
+├── capitulo_01/
+│   ├── layout_WITH_PATCH.json
+│   └── chapter01_WITH_PATCH_annotated.pdf
+├── capitulo_02/
+└── ...
 
 ---
 
@@ -304,32 +345,45 @@ bbox_tl = bbox.to_top_left_origin(page_height=page.size.height)
 ## Estructura del Proyecto
 
 ```
-docling_layout/
-├── EXTRACT_ANY_CHAPTER.py          # Script principal de extracción
-├── README.md                       # Este archivo
-├── DOCLING_COMPLETE_GUIDE.md       # Guía técnica detallada
+dark-data-docling-extractors/
 │
-├── eaf_patch/                      # Monkey patch (durante extracción)
-│   ├── core/
-│   │   ├── eaf_patch_engine.py     # Motor principal
-│   │   ├── eaf_title_detector.py   # Detector de títulos
-│   │   └── eaf_company_name_detector.py
-│   ├── domain/
-│   │   └── power_line_classifier.py
-│   └── docs/                       # Documentación del patch
+├── data/                           # Datos (git-ignored)
+│   ├── inputs/                     # PDFs de entrada
+│   │   └── EAF-089-2025/
+│   │       ├── capitulo_01.pdf
+│   │       └── ...
+│   └── outputs/                    # Resultados
+│       └── EAF-089-2025/
+│           └── capitulo_01/
+│               ├── layout_WITH_PATCH.json
+│               └── chapter01_WITH_PATCH_annotated.pdf
 │
-├── post_processors/                # Post-procesadores (después de extracción)
-│   ├── core/
-│   │   ├── enumerated_item_fix.py  # Smart Reclassification (9 partes)
-│   │   ├── hierarchy_restructure.py # Estructura jerárquica
-│   │   └── metadata_date_extractor.py
-│   └── docs/
-│       └── POST_PROCESSOR_CATALOG.md
-│
-└── capitulo_01/ ... capitulo_11/   # Salidas por capítulo
-    └── outputs/
-        ├── layout_WITH_PATCH.json
-        └── chapterXX_WITH_PATCH_annotated.pdf
+└── shared_folder/docling_layout/   # Código (tracked en git)
+    ├── EXTRACT_ANY_CHAPTER.py      # Script principal
+    ├── README.md                   # Este archivo
+    ├── DOCLING_COMPLETE_GUIDE.md   # Guía técnica
+    │
+    ├── eaf_patch/                  # Monkey patch
+    │   ├── core/                   # Código
+    │   └── docs/                   # Documentación
+    │
+    └── post_processors/            # Post-procesadores
+        ├── core/
+        │   ├── __init__.py
+        │   ├── enumerated_item_fix.py      # 2. Smart Reclassification
+        │   ├── isolated_list_fix.py        # 3. Isolated List Fix
+        │   ├── table_reextract/            # 4. Table Re-extraction ⭐
+        │   │   ├── __init__.py             # Entry point
+        │   │   ├── classifier.py           # Clasifica tipo de tabla
+        │   │   ├── extractors/             # Extractores genéricos
+        │   │   │   ├── pymupdf.py          # Tablas sin líneas
+        │   │   │   └── tableformer.py      # Mantiene Docling
+        │   │   └── custom/                 # Extractores específicos
+        │   │       └── costos_horarios.py  # Tablas 24 horas
+        │   ├── hierarchy_restructure.py    # 5. Hierarchy
+        │   └── metadata_date_extractor.py  # 6. Metadata
+        └── docs/
+            └── POST_PROCESSOR_CATALOG.md
 ```
 
 ---
@@ -346,13 +400,13 @@ docling_layout/
 
 ```bash
 # Verificar JSON generado
-jq '.texts | length' capitulo_01/outputs/layout_WITH_PATCH.json
-jq '.tables | length' capitulo_01/outputs/layout_WITH_PATCH.json
+jq '.texts | length' data/outputs/EAF-089-2025/capitulo_01/layout_WITH_PATCH.json
+jq '.tables | length' data/outputs/EAF-089-2025/capitulo_01/layout_WITH_PATCH.json
 
 # Ver jerarquía
-jq '.texts[] | select(.children | length > 0) | {text: .text[0:50], children: (.children | length)}' capitulo_01/outputs/layout_WITH_PATCH.json
+jq '.texts[] | select(.children | length > 0) | {text: .text[0:50], children: (.children | length)}' data/outputs/EAF-089-2025/capitulo_01/layout_WITH_PATCH.json
 ```
 
 ---
 
-**Última actualización**: 2025-11-20
+**Última actualización**: 2025-11-23

@@ -17,7 +17,7 @@ Supports common numbering patterns:
 - Roman numerals: i., ii., iii.
 """
 import re
-from docling_core.types.doc import DocItemLabel
+from docling_core.types.doc import DocItemLabel, RefItem
 import time
 
 
@@ -174,10 +174,10 @@ def apply_hierarchy_restructure_to_document(document):
         else:
             header_info['item'].children.clear()
 
-        # Add all items in range as children (using $ref format)
+        # Add all items in range as children (using RefItem objects)
         for item_idx in range(start_idx, end_idx):
-            ref_dict = {'$ref': f"#/texts/{item_idx}"}
-            header_info['item'].children.append(ref_dict)
+            ref = RefItem(cref=f"#/texts/{item_idx}")
+            header_info['item'].children.append(ref)
 
         # If this header has a parent in stack, add this header as child of parent
         if stack:

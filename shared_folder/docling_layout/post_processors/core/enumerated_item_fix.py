@@ -787,4 +787,100 @@ def apply_enumerated_item_fix_to_document(document):
 
     print("=" * 80 + "\n")
 
-    return company_fixes + bullet_fixes + caption_fixes + line_fixes + total_enum_fixes + isolated_list_fixes + continuation_fixes + header_fixes + zona_fixes
+    # ============================================================================
+    # PART 10: Normalize similar header patterns
+    # ============================================================================
+    print("=" * 80)
+    print("PART 10: Normalizing similar header patterns (colon-ending items)...")
+    print("=" * 80)
+
+    # Find items that end with ":" and look like headers
+    # Pattern: "Something something:" where it's a title/header style
+    colon_header_pattern = re.compile(r'^[^:]{10,60}:$')  # 10-60 chars ending with :
+
+    # Group similar items by their base pattern
+    # e.g., "Acciones correctivas a corto plazo:" and "Acciones correctivas a largo plazo:"
+    # share the pattern "Acciones correctivas a * plazo:"
+
+    colon_items = []
+    for i, item in enumerate(all_items):
+        if item.label in [DocItemLabel.LIST_ITEM, DocItemLabel.SECTION_HEADER]:
+            text = item.text.strip()
+            if colon_header_pattern.match(text):
+                colon_items.append({
+                    'index': i,
+                    'item': item,
+                    'text': text,
+                    'label': item.label
+                })
+
+    print(f"🔍 [SMART RECLASS] Found {len(colon_items)} colon-ending potential headers")
+
+    similar_fixes = 0
+
+    if len(colon_items) >= 2:
+        # Find similar items by comparing text structure
+        # Two items are similar if they differ only in a few words
+        processed = set()
+
+        for i, item1 in enumerate(colon_items):
+            if i in processed:
+                continue
+
+            similar_group = [i]
+            text1 = item1['text'].lower()
+            words1 = set(re.findall(r'\w+', text1))
+
+            for j, item2 in enumerate(colon_items):
+                if j <= i or j in processed:
+                    continue
+
+                text2 = item2['text'].lower()
+                words2 = set(re.findall(r'\w+', text2))
+
+                # Calculate similarity: common words / total unique words
+                common = len(words1 & words2)
+                total = len(words1 | words2)
+                similarity = common / total if total > 0 else 0
+
+                # Also check if they are close in the document (within 10 positions)
+                close = abs(item1['index'] - item2['index']) <= 10
+
+                # Consider similar if >60% word overlap and close
+                if similarity > 0.6 and close:
+                    similar_group.append(j)
+                    processed.add(j)
+
+            processed.add(i)
+
+            # If we found a group of similar items
+            if len(similar_group) >= 2:
+                group_items = [colon_items[idx] for idx in similar_group]
+
+                # Count labels in the group
+                section_headers = sum(1 for item in group_items if item['label'] == DocItemLabel.SECTION_HEADER)
+                list_items = sum(1 for item in group_items if item['label'] == DocItemLabel.LIST_ITEM)
+
+                # If there's a mix, normalize to section_header (majority or default)
+                if section_headers > 0 and list_items > 0:
+                    print(f"\n   📋 [SMART RECLASS] Found group of {len(group_items)} similar colon-ending items:")
+                    print(f"      {section_headers} section_header(s), {list_items} list_item(s)")
+
+                    # Normalize to section_header
+                    for group_item in group_items:
+                        item = group_item['item']
+                        text = group_item['text']
+
+                        if item.label == DocItemLabel.LIST_ITEM:
+                            print(f"   🔄 [SMART RECLASS] LIST_ITEM → SECTION_HEADER: '{text}'")
+                            item.label = DocItemLabel.SECTION_HEADER
+                            similar_fixes += 1
+
+    if similar_fixes > 0:
+        print(f"\n✅ [SMART RECLASS] Normalized {similar_fixes} similar item(s) → SECTION_HEADER")
+    else:
+        print("   ℹ️  No similar items needed normalization")
+
+    print("=" * 80 + "\n")
+
+    return company_fixes + bullet_fixes + caption_fixes + line_fixes + total_enum_fixes + isolated_list_fixes + continuation_fixes + header_fixes + zona_fixes + similar_fixes
