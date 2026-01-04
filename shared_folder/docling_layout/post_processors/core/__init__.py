@@ -22,6 +22,10 @@ Available Post-Processors:
     - Uses PyMuPDF for tables without lines
     - Keeps TableFormer when it works well
     - Custom extractors for domain-specific tables
+- table_continuation_merger: Merges table continuations across pages
+    - Detects continuation patterns (same headers, sequential pages)
+    - Merges rows into base table
+    - Marks continuation tables with flag
 - hierarchy_restructure: Restructures JSON by header hierarchy (parent-child nesting)
 - metadata_date_extractor: Extracts emission date and failure date from headers
 
@@ -29,12 +33,14 @@ Note: Isolated list-item fix moved to monkey patch (page-level processing)
 """
 from .enumerated_item_fix import apply_enumerated_item_fix_to_document
 from .table_reextract import apply_table_reextract_to_document
+from .table_continuation_merger import apply_table_continuation_merger_to_document
 from .hierarchy_restructure import apply_hierarchy_restructure_to_document
 from .metadata_date_extractor import apply_date_extraction_to_document
 
 __all__ = [
     'apply_enumerated_item_fix_to_document',
     'apply_table_reextract_to_document',
+    'apply_table_continuation_merger_to_document',
     'apply_hierarchy_restructure_to_document',
     'apply_date_extraction_to_document',
 ]

@@ -26,7 +26,7 @@ sys.path.insert(0, str(eaf_patch_path))
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions, TableFormerMode
 from core.eaf_patch_engine import apply_universal_patch_with_pdf
-from post_processors.core import apply_enumerated_item_fix_to_document, apply_table_reextract_to_document, apply_hierarchy_restructure_to_document, apply_date_extraction_to_document
+from post_processors.core import apply_enumerated_item_fix_to_document, apply_table_reextract_to_document, apply_table_continuation_merger_to_document, apply_hierarchy_restructure_to_document, apply_date_extraction_to_document
 import json
 import fitz
 
@@ -165,7 +165,7 @@ def generate_annotated_pdf(doc, result, pdf_path, output_path, label):
 
 def extract_chapter(chapter_num: int, report_id: str = "EAF-089-2025",
                     input_dir: Path = None, output_dir: Path = None,
-                    custom_pages: str = None):
+                    custom_pages: str = None, force_pymupdf: bool = True):
     """
     Extract a single chapter with EAF monkey patch
 
@@ -287,8 +287,12 @@ def extract_chapter(chapter_num: int, report_id: str = "EAF-089-2025",
     print(f"✅ Smart reclassification fixes (10 parts): {enum_count}")
 
     # Re-extract tables with specialized extractors
-    table_count = apply_table_reextract_to_document(doc, str(pdf_path))
+    table_count = apply_table_reextract_to_document(doc, str(pdf_path), force_pymupdf=force_pymupdf)
     print(f"✅ Table re-extraction: {table_count} tables processed")
+
+    # Merge table continuations
+    merge_count = apply_table_continuation_merger_to_document(doc)
+    print(f"✅ Table continuation merger: {merge_count} tables merged")
 
     # Restructure by hierarchy
     hierarchy_count = apply_hierarchy_restructure_to_document(doc)
@@ -381,6 +385,8 @@ if __name__ == "__main__":
                         help='Output directory (default: data/outputs)')
     parser.add_argument('--pages', type=str, default=None,
                         help='Custom page range (e.g., "1-50")')
+    parser.add_argument('--force-pymupdf', action='store_true',
+                        help='Force PyMuPDF extraction for all tables (skip TableFormer)')
 
     args = parser.parse_args()
 
@@ -392,5 +398,6 @@ if __name__ == "__main__":
         report_id=args.report,
         input_dir=input_dir,
         output_dir=output_dir,
-        custom_pages=args.pages
+        custom_pages=args.pages,
+        force_pymupdf=args.force_pymupdf
     )

@@ -10,18 +10,55 @@ specialized extractors based on table type.
 
 import time
 from .classifier import classify_table
-from .extractors import pymupdf, tableformer
-from .custom import costos_horarios
+from .extractors import pymupdf, tableformer, line_based, position_based
+from .custom import (
+    costos_horarios,
+    programacion_diaria,
+    centrales_desvio,
+    centrales_grandes,
+    movimientos_despacho,
+    registro_operacion_sen,
+    reporte_desconexion,
+    horario_tecnologia,
+    indicador_compacto,
+    eventos_hora,
+    scada_alarmas,
+)
 
 # Registry of extractors by table type
 EXTRACTORS = {
-    # Custom domain-specific extractors
-    "costos_horarios": costos_horarios.extract,
-    "demanda_generacion": costos_horarios.extract,  # Same 24-hour format
-    "hidroelectricas": pymupdf.extract,  # TODO: Create specific extractor
+    # === HOURLY TABLES (26 cols: X|1-24|Total) ===
+    "programacion_diaria": programacion_diaria.extract,  # Concepto|1-24|Total
+    "costos_horarios": costos_horarios.extract,          # Costos marginales
+    "demanda_generacion": costos_horarios.extract,       # Same 24-hour format
+    "horario_tecnologia": horario_tecnologia.extract,    # TÉRMICAS/HIDRÁULICAS/EÓLICAS
 
-    # Generic extractors
-    "sin_lineas_generico": pymupdf.extract,
+    # === OPERATION TABLES ===
+    "movimientos_despacho": movimientos_despacho.extract,      # Dispatch movements
+    "registro_operacion_sen": registro_operacion_sen.extract,  # SEN operation records
+    "reporte_desconexion": reporte_desconexion.extract,        # Disconnection reports
+
+    # === GENERATION TABLES ===
+    "centrales_desvio": centrales_desvio.extract,        # Central|Prog|Real|Desv%|Estado
+    "centrales_grandes": centrales_grandes.extract,      # CENTRAL ≥100 MW|Disp|Obs
+    "hidroelectricas": pymupdf.extract,                  # Legacy - uses generic
+
+    # === INDICATOR TABLES ===
+    "indicador_compacto": indicador_compacto.extract,    # Cotas, Inercia, etc.
+
+    # === EVENT TABLES ===
+    "eventos_hora": eventos_hora.extract,                # Hora|Centro Control|Obs
+    "scada_alarmas": scada_alarmas.extract,              # SCADA logs
+    "infraestructura_sen": pymupdf.extract,              # Infrastructure status
+
+    # === LINE-BASED EXTRACTOR ===
+    "line_based": line_based.extract,  # Tables with visible grid lines
+
+    # === POSITION-BASED EXTRACTOR ===
+    "position_based": position_based.extract,  # Tables without lines (auto-detect columns)
+
+    # === GENERIC EXTRACTORS ===
+    "sin_lineas_generico": position_based.extract,  # Changed from pymupdf to position_based
     "tableformer_ok": tableformer.keep,
     "default": pymupdf.extract,
 
@@ -30,13 +67,14 @@ EXTRACTORS = {
 }
 
 
-def apply_table_reextract_to_document(document, pdf_path):
+def apply_table_reextract_to_document(document, pdf_path, force_pymupdf=False):
     """
     Re-extract tables using appropriate extractors based on table type.
 
     Args:
         document: The Docling document object
         pdf_path: Path to the source PDF file
+        force_pymupdf: If True, always use PyMuPDF extraction instead of TableFormer
 
     Returns:
         int: Number of tables re-extracted
@@ -44,7 +82,8 @@ def apply_table_reextract_to_document(document, pdf_path):
     start_time = time.time()
 
     print("\n" + "=" * 80)
-    print("📊 [TABLE REEXTRACT] Re-extracting tables with specialized extractors")
+    mode = "PyMuPDF only" if force_pymupdf else "Smart classification"
+    print(f"📊 [TABLE REEXTRACT] Re-extracting tables ({mode})")
     print("=" * 80)
 
     if not hasattr(document, 'tables') or not document.tables:
@@ -64,7 +103,15 @@ def apply_table_reextract_to_document(document, pdf_path):
         current_cells = len(table.data.table_cells) if hasattr(table.data, 'table_cells') else 0
 
         # Classify table type
-        table_type, confidence, reason = classify_table(table, pdf_path)
+        if force_pymupdf:
+            # Force PyMuPDF extraction, but still classify for custom extractors
+            table_type, confidence, reason = classify_table(table, pdf_path)
+            # Override tableformer_ok to use pymupdf instead
+            if table_type == "tableformer_ok":
+                table_type = "default"
+                reason = "Forced PyMuPDF mode"
+        else:
+            table_type, confidence, reason = classify_table(table, pdf_path)
 
         # Get appropriate extractor
         extractor = EXTRACTORS.get(table_type, EXTRACTORS["default"])

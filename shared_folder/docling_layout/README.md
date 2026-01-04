@@ -156,23 +156,40 @@ Corrige listas que quedaron aisladas sin contexto (`isolated_list_fix.py`).
 
 ### 4. Table Re-extraction ⭐ NUEVO
 
-Re-extrae contenido de tablas usando PyMuPDF (`table_reextract.py`):
+Re-extrae contenido de tablas usando PyMuPDF (`table_reextract/`):
 - Usa bounding boxes correctos de Docling
 - Reemplaza extracción fallida de TableFormer
 - Clasifica tipo de tabla y aplica extractor específico
 - Genera estructura simplificada para LLMs:
   ```json
   {
+    "extractor": "pymupdf",
     "headers": ["Col1", "Col2", ...],
-    "rows": [["val1", "val2", ...], ...]
+    "rows": [["val1", "val2", ...], ...],
+    "num_rows": 8,
+    "num_cols": 26
   }
   ```
 
-**Extractores específicos:**
+**Extractores disponibles:**
 - `costos_horarios` - Tablas de costos por hora (1-24)
-- `hidroelectricas` - Tablas de centrales hidroeléctricas
-- `demanda_generacion` - Tablas de demanda/generación
-- `generic` - Extractor genérico por defecto
+- `pymupdf` - Extractor genérico para tablas sin líneas
+- `tableformer` - Mantiene resultado original de Docling
+
+**Parámetro `force_pymupdf`:**
+- Por defecto: `True`
+- Fuerza uso de PyMuPDF incluso cuando TableFormer funciona bien
+- Garantiza estructura simplificada consistente
+
+**Resultados EAF-477-2025 Cap 11 (153 tablas):**
+- `costos_horarios`: 27 tablas
+- `pymupdf`: 54 tablas
+- `tableformer`: 72 tablas
+- **81 tablas (53%) re-extraídas con PyMuPDF**
+
+**Ejemplo de mejora:**
+- Tabla 0 antes: 2 celdas (TableFormer falló)
+- Tabla 0 después: 8×26 = 208 valores correctos
 
 ### 5. Hierarchy Restructure
 
@@ -391,6 +408,7 @@ dark-data-docling-extractors/
 ## Documentación Adicional
 
 - **Post-Processors**: `post_processors/docs/POST_PROCESSOR_CATALOG.md`
+- **Table Reextract**: `post_processors/core/table_reextract/FUTURE_IMPROVEMENTS.md`
 - **Monkey Patch**: `eaf_patch/docs/EAF_PATCH_README.md`
 - **Guía Técnica**: `DOCLING_COMPLETE_GUIDE.md`
 
