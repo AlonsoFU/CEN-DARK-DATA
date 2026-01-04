@@ -290,6 +290,10 @@ config/local_*.json
 # EAF Extraction System - Docling Layout
 # ===========================================
 
+# External MCP server repos (cloned separately)
+github-mcp-server/
+servers/
+
 # Data directory (inputs and outputs)
 data/inputs/*
 data/outputs/*
